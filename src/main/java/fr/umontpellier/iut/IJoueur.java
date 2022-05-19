@@ -2,6 +2,7 @@ package fr.umontpellier.iut;
 
 import fr.umontpellier.iut.rails.CouleurWagon;
 import fr.umontpellier.iut.rails.Destination;
+import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 
 import java.util.List;

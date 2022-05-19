@@ -2,6 +2,7 @@ package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.rails.Destination;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -29,24 +30,31 @@ public class VueDuJeu extends VBox {
 
     private IJeu jeu;
     private VuePlateau plateau;
+
     private Label l1;
     private Label l2;
     private Label l3;
     private Label l4;
+    private StringProperty l1SP;
+    private StringProperty l2SP;
+    private StringProperty l3SP;
+    private StringProperty l4SP;
 
-    private StringProperty l1Property;
 
+    private Button bt;
     public VueDuJeu(IJeu jeu) {
         this.jeu = jeu;
+        VueJoueurCourant vueJoueurCourant = new VueJoueurCourant(jeu);
         plateau = new VuePlateau();
         this.setPrefHeight(100);
         this.setPrefWidth(100);
-
+        getChildren().addAll(vueJoueurCourant);
         //getChildren().add(plateau)
 
+        initialiserObjet();
+        creerBindings();
+        buttonInit();
         setListener();
-        creerChoses();
-
     }
 
 
@@ -61,13 +69,17 @@ public class VueDuJeu extends VBox {
         jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
             @Override
             public void onChanged(Change<? extends Destination> change) {
-                change.next();
-                if(change.wasAdded()){
-                    //getChildren().add(new Label("destination"));
-                }
+                while (change.next()) {
+                    if (change.wasAdded()) {
+                        Platform.runLater( () -> l1SP.set(change.getList().get(0).toString()));
+                        Platform.runLater( () -> l2SP.set(change.getList().get(1).toString()));
+                        Platform.runLater( () -> l3SP.set(change.getList().get(2).toString()));
+                        Platform.runLater( () -> l4SP.set(change.getList().get(3).toString()));
+                    }
 
-                if(change.wasRemoved()){
-                    System.out.println(change.toString());
+                    if (change.wasRemoved()) {
+                        System.out.println(change.getRemoved().toString());
+                    }
                 }
             }
         });
@@ -76,22 +88,35 @@ public class VueDuJeu extends VBox {
         return jeu;
     }
 
-    public void creerBindings() { }
-    public void creerChoses() {
-        l1 = new Label();
-        l2 = new Label();
-        l3= new Label();
-        l4 = new Label();
-        l1Property = new SimpleStringProperty();
-        l1.textProperty().bind(l1Property);
+    public void creerBindings() {
+        l1.textProperty().bind(l1SP);
+        l2.textProperty().bind(l2SP);
+        l3.textProperty().bind(l3SP);
+        l4.textProperty().bind(l4SP);
+    }
 
-         Button bt = new Button("passer");
-         getChildren().add(bt);
-         bt.onActionProperty().set(new EventHandler<ActionEvent>() {
+    public void buttonInit(){
+        bt.onActionProperty().set(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 jeu.passerAEteChoisi();
             }
         });
+    }
+
+    public void initialiserObjet() {
+        VBox labelBox = new VBox();
+        l1 = new Label();
+        l2 = new Label();
+        l3= new Label();
+        l4 = new Label();
+        l1SP = new SimpleStringProperty();
+        l2SP = new SimpleStringProperty();
+        l3SP = new SimpleStringProperty();
+        l4SP = new SimpleStringProperty();
+
+        labelBox.getChildren().addAll(l1,l2,l3,l4);
+        bt = new Button("passer");
+        getChildren().addAll(bt,labelBox);
     }
 }
