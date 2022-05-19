@@ -10,6 +10,4 @@ import javafx.scene.layout.Pane;
  */
 public class VueAutresJoueurs extends Pane {
 
-
-
 }
