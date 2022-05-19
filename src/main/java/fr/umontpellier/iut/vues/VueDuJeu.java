@@ -1,5 +1,6 @@
 package fr.umontpellier.iut.vues;
 
+import fr.umontpellier.iut.IDestination;
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.rails.Destination;
 import javafx.application.Platform;
@@ -39,12 +40,12 @@ public class VueDuJeu extends VBox {
     private StringProperty l2SP;
     private StringProperty l3SP;
     private StringProperty l4SP;
-
+    private VueJoueurCourant vueJoueurCourant;
 
     private Button bt;
     public VueDuJeu(IJeu jeu) {
         this.jeu = jeu;
-        VueJoueurCourant vueJoueurCourant = new VueJoueurCourant(jeu);
+        vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau();
         this.setPrefHeight(100);
         this.setPrefWidth(100);
@@ -59,6 +60,7 @@ public class VueDuJeu extends VBox {
 
 
     public void setListener(){
+        vueJoueurCourant.setListener(jeu);
         jeu.instructionProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
@@ -77,8 +79,8 @@ public class VueDuJeu extends VBox {
                         Platform.runLater( () -> l4SP.set(change.getList().get(3).toString()));
                     }
 
-                    if (change.wasRemoved()) {
-                        System.out.println(change.getRemoved().toString());
+                    if(change.wasRemoved()){
+                        //Platform.runLater(() -> );
                     }
                 }
             }
@@ -89,10 +91,13 @@ public class VueDuJeu extends VBox {
     }
 
     public void creerBindings() {
+        vueJoueurCourant.creerBindings(jeu);
         l1.textProperty().bind(l1SP);
         l2.textProperty().bind(l2SP);
         l3.textProperty().bind(l3SP);
         l4.textProperty().bind(l4SP);
+
+
     }
 
     public void buttonInit(){
@@ -118,5 +123,9 @@ public class VueDuJeu extends VBox {
         labelBox.getChildren().addAll(l1,l2,l3,l4);
         bt = new Button("passer");
         getChildren().addAll(bt,labelBox);
+    }
+
+    public Label trouveLabelDestination(IDestination d){
+        return new Label(d.getNom());
     }
 }

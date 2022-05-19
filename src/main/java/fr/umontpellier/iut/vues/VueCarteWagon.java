@@ -1,6 +1,9 @@
 package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.ICouleurWagon;
+import fr.umontpellier.iut.rails.CouleurWagon;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 /**
@@ -14,6 +17,9 @@ public class VueCarteWagon extends Pane {
 
     public VueCarteWagon(ICouleurWagon couleurWagon) {
         this.couleurWagon = couleurWagon;
+
+        //Image i = new Image("/images/cartesWagons/carte-wagon-"+couleurWagon.toString()+".png");
+       //getChildren().add(new ImageView(i));
     }
 
     public ICouleurWagon getCouleurWagon() {
@@ -21,3 +27,4 @@ public class VueCarteWagon extends Pane {
     }
 
 }
+
