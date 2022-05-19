@@ -63,6 +63,7 @@ public class RailsIHM extends Application {
             event.consume();
         });
         primaryStage.show();
+
     }
 
     private void demarrerServiceJeu() {
