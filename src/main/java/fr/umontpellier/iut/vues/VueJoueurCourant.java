@@ -39,7 +39,7 @@ public class VueJoueurCourant extends VBox {
         jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
             @Override
             public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
-                Platform.runLater(() -> stringProperty.set(t1.getNom()));
+                Platform.runLater(() -> stringProperty.set("joueur courant :" + t1.getNom()));
             }
         });
         nomJoueur.textProperty().bind(stringProperty);
