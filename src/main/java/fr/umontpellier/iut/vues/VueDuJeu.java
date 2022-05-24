@@ -17,6 +17,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -33,7 +36,11 @@ import java.util.LinkedList;
  * (le joueur courant, les 5 cartes Wagons visibles, les destinations lors de l'étape d'initialisation de la partie, ...)
  * ainsi que les listeners à exécuter lorsque ces éléments changent
  */
+                           //Mettre en HBox
 public class VueDuJeu extends VBox {
+
+
+    private ImageView carteT;
 
     private IJeu jeu;
     private VuePlateau plateau;
@@ -72,7 +79,7 @@ public class VueDuJeu extends VBox {
         this.setPrefHeight(600);
         this.setPrefWidth(600);
         getChildren().addAll(vueJoueurCourant);
-        //getChildren().add(plateau)
+        getChildren().add(plateau);
 
         setSpacing(10);
         initialiserObjet();
@@ -163,6 +170,11 @@ public class VueDuJeu extends VBox {
     }
 
     public void initialiserObjet() {
+
+        VBox gauche = new VBox(); //ajouter toutes les cartes Pioche (destinations, wagons) + bouton passer
+        VBox milieu = new VBox(); //ajouter dans l'ordre : Information,plateau,Inventaire
+        VBox droite = new VBox(); // Ajouter dans l'ordre les joueurs puis les logs
+
         VBox labelBoxDestination = new VBox();
         HBox labelBoxCarteWagons = new HBox();
 
@@ -181,6 +193,8 @@ public class VueDuJeu extends VBox {
         w3SP = new SimpleStringProperty();
         w4SP = new SimpleStringProperty();
         w5SP = new SimpleStringProperty();
+
+        carteT = new ImageView();
 
         carteW1 = new Label();
         carteW2 = new Label();
