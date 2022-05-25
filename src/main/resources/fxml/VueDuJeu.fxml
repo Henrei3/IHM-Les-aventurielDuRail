@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.14" prefWidth="1054.62" stylesheets="@../css/style.css" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="681.0" prefWidth="331.0">
+         <children>
+            <Button fx:id="bt" mnemonicParsing="false" text="Passer" onAction="#btOnAction" />
+         </children>
+      </VBox>
+      <VBox prefHeight="681.0" prefWidth="450.0" />
+      <VBox prefHeight="681.0" prefWidth="298.0" />
+   </children>
+</fx:root>
