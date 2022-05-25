@@ -37,7 +37,7 @@ import java.util.LinkedList;
  * ainsi que les listeners à exécuter lorsque ces éléments changent
  */
                            //Mettre en HBox
-public class VueDuJeu extends VBox {
+public class VueDuJeu extends HBox {
 
 
     private ImageView carteT;
@@ -49,6 +49,8 @@ public class VueDuJeu extends VBox {
     private Label l2;
     private Label l3;
     private Label l4;
+    private Label information;
+
 
     private Label carteW1; //carte Wagons visibles
     private Label carteW2;
@@ -73,22 +75,35 @@ public class VueDuJeu extends VBox {
     private Button bt;
     public VueDuJeu(IJeu jeu) {
 
+
+
+
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/vueDuJeu.fxml"));
+            loader.setRoot(this);
+            loader.setController(this);
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau();
         this.setPrefHeight(600);
         this.setPrefWidth(600);
-        getChildren().addAll(vueJoueurCourant);
-        getChildren().add(plateau);
 
         setSpacing(10);
         initialiserObjet();
         creerBindings();
         buttonInit();
         setListener();
-
-
-
 
     }
 
@@ -145,6 +160,7 @@ public class VueDuJeu extends VBox {
     }
 
     public void creerBindings() {
+        //information.textProperty().bind();
         vueJoueurCourant.creerBindings(jeu);
         l1.textProperty().bind(l1SP);
         l2.textProperty().bind(l2SP);
@@ -178,6 +194,10 @@ public class VueDuJeu extends VBox {
         VBox labelBoxDestination = new VBox();
         HBox labelBoxCarteWagons = new HBox();
 
+        gauche.getChildren().addAll(labelBoxDestination,labelBoxCarteWagons);
+
+
+        information = new Label();
         l1 = new Label();
         l2 = new Label();
         l3= new Label();
@@ -208,7 +228,11 @@ public class VueDuJeu extends VBox {
         labelBoxDestination.getChildren().addAll(l1,l2,l3,l4);
 
         bt = new Button("passer");
-        getChildren().addAll(bt,labelBoxDestination,labelBoxCarteWagons);
+        gauche.getChildren().add(bt);
+
+        droite.getChildren().add(vueJoueurCourant);
+        milieu.getChildren().add(plateau);
+        getChildren().addAll(gauche,milieu,droite);
     }
 
 
