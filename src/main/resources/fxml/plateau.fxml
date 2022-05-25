@@ -7,13 +7,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 
-<fx:root type="javafx.scene.layout.BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-         prefHeight="745.96" prefWidth="1156.68" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" >
-    <ImageView fitHeight="745.96" fitWidth="1156.68" pickOnBounds="true" preserveRatio="true" >
-        <image>
-            <Image fx:id="plateau" url="@../images/euMap.jpg" />
-        </image>
+<fx:root stylesheets="@../css/style.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="855.66" prefWidth="1326.78" type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <ImageView fx:id="image" fitHeight="855.66" fitWidth="1326.78" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/euMap.jpg"/>
     </ImageView>
+
     <Group id="routes">
         <Group id="Amsterdam - Bruxelles" onMouseClicked="#choixRouteOuVille">
             <Rectangle height="13.600000000000001" width="40.800000000000004" layoutX="343.06" layoutY="245.82000000000002" rotate="115.25316339457389" x="-20.400000000000002" y="-6.800000000000001" />
@@ -568,4 +566,5 @@
         <Circle id="Bucuresti" onMouseClicked="#choixRouteOuVille" layoutX="864.2800000000001" layoutY="490.28000000000003" radius="8.16" />
         <Circle id="Sevastopol" onMouseClicked="#choixRouteOuVille" layoutX="1025.44" layoutY="507.28000000000003" radius="8.16" />
     </Group>
+
 </fx:root>

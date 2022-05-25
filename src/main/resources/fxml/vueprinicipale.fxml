@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.HBox?>
 
 
-<HBox   maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx"
-         xmlns:fx="http://javafx.com/fxml" fx:controller="fr.umontpellier.iut.vues.VueDuJeu">
+<fx:root type="javafx.scene.layout.HBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+         prefHeight="745.96" prefWidth="1156.68" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
 
         <VBox fx:id="gauche" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: 50;">
                 <VBox alignment="CENTER" prefHeight="49.0" prefWidth="100.0">
                    <children>
-                      <Button fx:id="bt" mnemonicParsing="false" style="-fx-line-spacing: 50;" text="Passer" onAction="#buttonInit" />
+                      <Button fx:id="bt" mnemonicParsing="false" style="-fx-line-spacing: 50;" text="Passer"/>
                    </children>
                 </VBox>
           </VBox>
@@ -23,4 +23,4 @@
              </children>
           </VBox>
           <VBox fx:id="droite" prefHeight="200.0" prefWidth="100.0" />
-</HBox>
+</fx:root>

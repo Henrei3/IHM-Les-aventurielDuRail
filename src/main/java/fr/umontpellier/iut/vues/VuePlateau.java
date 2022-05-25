@@ -1,13 +1,15 @@
 package fr.umontpellier.iut.vues;
 
+import javafx.beans.binding.DoubleBinding;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.scene.image.Image;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 
@@ -17,23 +19,22 @@ import java.io.IOException;
  * On y définit le listener à exécuter lorsque qu'un élément du plateau a été choisi par l'utilisateur
  * ainsi que les bindings qui mettront ?à jour le plateau après la prise d'une route ou d'une ville par un joueur
  */
-public class VuePlateau extends BorderPane {
-
+public class VuePlateau extends Pane {
 
     public VuePlateau() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/plateau.fxml"));
-            loader.setController(this);
             loader.setRoot(this);
+            loader.setController(this);
             loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
     public void choixRouteOuVille() {
 
     }
+
 }
