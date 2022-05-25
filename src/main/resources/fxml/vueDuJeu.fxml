@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.VueDuJeu"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<?import javafx.scene.layout.BorderPane?>
+<fx:root   maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml" type="javafx.scene.layout.BorderPane" fx:controller="fr.umontpellier.iut.vues.VueDuJeu">
+   <children >
+     <BorderPane>
+        <VBox fx:id="gauche" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: 50;">
+             <children>
+                <VBox alignment="CENTER" prefHeight="49.0" prefWidth="100.0">
+                   <children>
+                      <Button fx:id="bt" mnemonicParsing="false" style="-fx-line-spacing: 50;" text="Passer" />
+                   </children>
+                </VBox>
+             </children>
+          </VBox>
+          <VBox fx:id="milieu" prefHeight="200.0" prefWidth="100.0">
+             <children>
+                <Label fx:id="information" text="LABEL DINFORMA" />
+             </children>
+          </VBox>
+          <VBox fx:id="droite" prefHeight="200.0" prefWidth="100.0" />
+     </BorderPane>
+   </children>
+</fx:root>
