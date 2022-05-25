@@ -2,30 +2,21 @@ package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.IDestination;
 import fr.umontpellier.iut.IJeu;
-import fr.umontpellier.iut.rails.CouleurWagon;
-import fr.umontpellier.iut.rails.Destination;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.util.LinkedList;
 
 /**
  * Cette classe correspond à la fenêtre principale de l'application.
@@ -43,10 +34,10 @@ public class VueDuJeu extends HBox {
     private IJeu jeu;
     private VuePlateau plateau;
 
-    private Label l1;  //carte Destinations
-    private Label l2;
-    private Label l3;
-    private Label l4;
+  //  private Label l1;  //carte Destinations
+  //  private Label l2;
+  //  private Label l3;
+  //  private Label l4;
 
     @FXML
     private VBox gauche;
@@ -61,11 +52,11 @@ public class VueDuJeu extends HBox {
     private StringProperty infoProperty;
 
 
-    private Label carteW1; //carte Wagons visibles
-    private Label carteW2;
-    private Label carteW3;
-    private Label carteW4;
-    private Label carteW5;
+ //   private Label carteW1; //carte Wagons visibles
+ //   private Label carteW2;
+ //   private Label carteW3;
+ //   private Label carteW4;
+ //   private Label carteW5;
 
     private StringProperty w1SP; //StringPropety carteWagons visibles
     private StringProperty w2SP;
@@ -86,36 +77,31 @@ public class VueDuJeu extends HBox {
 
 
     public VueDuJeu(IJeu jeu) {
-
-        try { //Fonctionne
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/vueDuJeu.fxml"));
-            loader.setRoot(this);
-            loader.setController(this);
-            loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/vuepricipale.fxml"));
 
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau();
+
         this.setPrefHeight(600);
         this.setPrefWidth(600);
         setSpacing(10);
-
-
+        //initialiserObjet();
+        //buttonInit();
+        //setListener();
     }
 
     public void initialize(){
-        initialiserObjet();
-        creerBindings();
-        buttonInit();
-        setListener();
+       // initialiserObjet();
+       // buttonInit();
+       // setListener();
     }
 
 
     public void setListener(){
-        vueJoueurCourant.setListener(jeu);
+        //vueJoueurCourant.setListener(jeu);
+
+
         jeu.instructionProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
@@ -123,7 +109,7 @@ public class VueDuJeu extends HBox {
             }
         });
 
-        jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
+        /*jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
             @Override
             public void onChanged(Change<? extends Destination> change) {
                 while (change.next()) {
@@ -139,10 +125,10 @@ public class VueDuJeu extends HBox {
                     }
                 }
             }
-        });
+        });*/
 
 
-        jeu.cartesWagonVisiblesProperty().addListener(new ListChangeListener<CouleurWagon>() {
+       /* jeu.cartesWagonVisiblesProperty().addListener(new ListChangeListener<CouleurWagon>() {
             @Override
             public void onChanged(Change<? extends CouleurWagon> change) {
                 while(change.next()){
@@ -159,7 +145,7 @@ public class VueDuJeu extends HBox {
                     }
                 }
             }
-        });
+        });*/
     }
     public IJeu getJeu() {
         return jeu;
@@ -167,7 +153,7 @@ public class VueDuJeu extends HBox {
 
     public void creerBindings() {
 
-       // vueJoueurCourant.creerBindings(jeu);
+        //vueJoueurCourant.creerBindings(jeu);
        // l1.textProperty().bind(l1SP);
        // l2.textProperty().bind(l2SP);
        // l3.textProperty().bind(l3SP);
@@ -178,14 +164,11 @@ public class VueDuJeu extends HBox {
         carteW4.textProperty().bind(w4SP);
         carteW5.textProperty().bind(w5SP);*/
 
-        Platform.runLater(() -> information.textProperty().bind(infoProperty));
-
-
-
     }
 
 
 
+    @FXML
     public void buttonInit(){
         bt.onActionProperty().set(new EventHandler<ActionEvent>() {
             @Override
@@ -202,17 +185,7 @@ public class VueDuJeu extends HBox {
          droite = new VBox(); // Ajouter dans l'ordre les joueurs puis les logs
 */
 
-        VBox labelBoxDestination = new VBox();
-        HBox labelBoxCarteWagons = new HBox();
-        gauche.getChildren().addAll(labelBoxDestination,labelBoxCarteWagons);
 
-//        information = new Label();
-
-
-       // l1 = new Label();
-       // l2 = new Label();
-      //  l3= new Label();
-     //   l4 = new Label();
 
         l1SP = new SimpleStringProperty();
         l2SP = new SimpleStringProperty();
@@ -227,25 +200,10 @@ public class VueDuJeu extends HBox {
 
         infoProperty = new SimpleStringProperty();
 
-
-       // carteW1 = new Label();
-       // carteW2 = new Label();
-       // carteW3 = new Label();
-       // carteW4 = new Label();
-       // carteW5 = new Label();
-
-        labelBoxCarteWagons.setSpacing(50);
-        labelBoxCarteWagons.getChildren().addAll(carteW1,carteW2,carteW3,carteW4,carteW5);
-
-        labelBoxDestination.getChildren().addAll(l1,l2,l3,l4);
-
-        bt = new Button("passer");
-
-        //gauche.getChildren().add(bt);
+        //gauche.getChildren().add();
         droite.getChildren().add(vueJoueurCourant);
         milieu.getChildren().add(plateau);
 
-        //getChildren().addAll(gauche,milieu,droite);
     }
 
 

@@ -4,20 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
-<?import javafx.scene.layout.BorderPane?>
-<fx:root   maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx"
-         xmlns:fx="http://javafx.com/fxml" type="javafx.scene.layout.BorderPane" fx:controller="fr.umontpellier.iut.vues.VueDuJeu">
-   <children >
-     <BorderPane>
+
+<HBox   maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml" fx:controller="fr.umontpellier.iut.vues.VueDuJeu">
+
         <VBox fx:id="gauche" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: 50;">
-             <children>
                 <VBox alignment="CENTER" prefHeight="49.0" prefWidth="100.0">
                    <children>
-                      <Button fx:id="bt" mnemonicParsing="false" style="-fx-line-spacing: 50;" text="Passer" />
+                      <Button fx:id="bt" mnemonicParsing="false" style="-fx-line-spacing: 50;" text="Passer" onAction="#buttonInit" />
                    </children>
                 </VBox>
-             </children>
           </VBox>
           <VBox fx:id="milieu" prefHeight="200.0" prefWidth="100.0">
              <children>
@@ -25,6 +23,4 @@
              </children>
           </VBox>
           <VBox fx:id="droite" prefHeight="200.0" prefWidth="100.0" />
-     </BorderPane>
-   </children>
-</fx:root>
+</HBox>
