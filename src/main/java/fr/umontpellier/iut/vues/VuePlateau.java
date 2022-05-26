@@ -56,10 +56,11 @@ public class VuePlateau extends Pane {
     private void bindRedimensionPlateau() {
         bindRoutes();
         bindVilles();
+
 //        Les dimensions de l'image varient avec celle de la scène
-        System.out.println(getScene().widthProperty().getValue());
-        //image.fitWidthProperty().bind(getScene().widthProperty());
-        //image.fitHeightProperty().bind(getScene().heightProperty());
+        image.fitWidthProperty().bind(getScene().widthProperty());
+        image.fitHeightProperty().bind(getScene().heightProperty());
+
 
     }
 
@@ -67,17 +68,24 @@ public class VuePlateau extends Pane {
 
     private void bindRectangle(Rectangle rect, double layoutX, double layoutY) {
 //      Liste des propriétés à lier
-        DoubleProperty x = new SimpleDoubleProperty();
-        x.set(layoutX);
-        DoubleProperty y = new SimpleDoubleProperty();
-        y.set(layoutY);
 
-       // rect.widthProperty().bind(x);
-       // rect.heightProperty().bind(y);
-       // rect.layoutXProperty().bind(x);
-       // rect.xProperty().bind(x);
-       // rect.layoutYProperty().bind(y);
-       // rect.yProperty().bind(y);
+        rect.widthProperty().bind(new DoubleBinding() {
+            @Override
+            protected double computeValue() {
+                return DonneesPlateau.largeurRectangle;
+            }
+        });
+
+        rect.heightProperty().bind(new DoubleBinding() {
+            @Override
+            protected double computeValue() {
+                return heightProperty().getValue() * image.getLayoutBounds().getWidth()/ DonneesPlateau.largeurInitialePlateau;
+            }
+        });
+       // rect.layoutXProperty().bind();
+        //rect.xProperty().bind();
+       // rect.layoutYProperty().bind();
+       // rect.yProperty().bind();
     }
 
     private void bindRoutes() {
@@ -91,6 +99,7 @@ public class VuePlateau extends Pane {
             }
         }
     }
+
 
     private void bindVilles() {
         for (Node nVille : villes.getChildren()) {

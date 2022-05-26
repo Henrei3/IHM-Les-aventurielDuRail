@@ -3,6 +3,8 @@ package fr.umontpellier.iut.vues;
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.rails.Destination;
 import javafx.application.Platform;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -38,13 +40,13 @@ public class VueDuJeu extends BorderPane {
     private Label information;
     @FXML
     private AnchorPane plateauPane;
-
     private StringProperty infoProperty;
+    private DoubleProperty plateauX;
+    private DoubleProperty plateauY;
 
 
     public VueDuJeu(IJeu jeu) {
-      //  setPrefWidth(1600);
-      //  setPrefHeight(1600);
+
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau();
@@ -69,9 +71,11 @@ public class VueDuJeu extends BorderPane {
 
     public void creerBindings() {
         infoProperty = new SimpleStringProperty();
+
         setListener();
         information.textProperty().bind(infoProperty);
         Platform.runLater(()->plateau.creerBindings());
+
     }
 
     public void setListener(){
@@ -88,9 +92,9 @@ public class VueDuJeu extends BorderPane {
                 while(change.next()){
                     //System.out.println(change.getList().get(0).getNom());
                 }
-
             }
         });
+
 
     }
 
