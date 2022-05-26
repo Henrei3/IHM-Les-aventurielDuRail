@@ -64,28 +64,60 @@ public class VuePlateau extends Pane {
 
     }
 
-
-
     private void bindRectangle(Rectangle rect, double layoutX, double layoutY) {
+
 //      Liste des propriétés à lier
+        rect.widthProperty().bind(new DoubleBinding() { //bon
+            { super.bind(image.fitWidthProperty(), image.fitHeightProperty());}
+        @Override
+         protected double computeValue() {
+           return DonneesPlateau.largeurRectangle*image.getLayoutBounds().getWidth()/DonneesPlateau.largeurInitialePlateau;
+          }
+        });
 
-        rect.widthProperty().bind(new DoubleBinding() {
+        rect.heightProperty().bind(new DoubleBinding() { //bon
+            { super.bind(image.fitWidthProperty(), image.fitHeightProperty());}
             @Override
             protected double computeValue() {
-                return DonneesPlateau.largeurRectangle;
+                return DonneesPlateau.hauteurRectangle*image.getLayoutBounds().getHeight()/DonneesPlateau.hauteurInitialePlateau;
             }
         });
 
-        rect.heightProperty().bind(new DoubleBinding() {
+         rect.layoutXProperty().bind(new DoubleBinding() { //bon
+             { super.bind(image.fitWidthProperty(), image.fitHeightProperty());}
+
+             @Override
+             protected double computeValue() {
+                 return layoutX * image.getLayoutBounds().getWidth()/ DonneesPlateau.largeurInitialePlateau;
+             }
+         });
+
+        rect.xProperty().bind(new DoubleBinding() {
+            { super.bind(image.fitWidthProperty(), image.fitHeightProperty());}
+
             @Override
             protected double computeValue() {
-                return heightProperty().getValue() * image.getLayoutBounds().getWidth()/ DonneesPlateau.largeurInitialePlateau;
+                return DonneesPlateau.xInitial * image.getLayoutBounds().getWidth() / DonneesPlateau.largeurInitialePlateau;
             }
         });
-       // rect.layoutXProperty().bind();
-        //rect.xProperty().bind();
-       // rect.layoutYProperty().bind();
-       // rect.yProperty().bind();
+
+        rect.layoutYProperty().bind(new DoubleBinding() {
+            { super.bind(image.fitWidthProperty(), image.fitHeightProperty());}
+
+            @Override
+            protected double computeValue() {
+                return layoutY * image.getLayoutBounds().getHeight() / DonneesPlateau.hauteurInitialePlateau;
+            }
+        });
+
+        rect.yProperty().bind(new DoubleBinding() {
+            { super.bind(image.fitHeightProperty());}
+
+            @Override
+            protected double computeValue() {
+                return  DonneesPlateau.yInitial * image.getLayoutBounds().getHeight() / DonneesPlateau.hauteurInitialePlateau;
+            }
+        });
     }
 
     private void bindRoutes() {
