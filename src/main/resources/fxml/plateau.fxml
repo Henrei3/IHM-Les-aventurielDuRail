@@ -1,570 +1,566 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Group?>
+<?import javafx.scene.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-
-<fx:root type="javafx.scene.layout.Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.14" prefWidth="1054.62" stylesheets="@../css/style.css"  xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-    <ImageView fitHeight="680.14" fitWidth="1054.62" pickOnBounds="true" preserveRatio="true">
-        <image>
-            <Image url="@../images/euMap.jpg" />
-        </image>
+<?import javafx.scene.shape.*?>
+<fx:root stylesheets="@../css/style.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="855.66" prefWidth="1326.78" type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <ImageView fx:id="image" fitHeight="855.66" fitWidth="1326.78" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/euMap.jpg"/>
     </ImageView>
-    <Group id="routes">
+    <Group fx:id="routes">
         <Group id="Amsterdam - Bruxelles" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="312.79" layoutY="224.13" rotate="115.25316339457389" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="393.51" layoutY="281.97" rotate="115.25316339457389" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Amsterdam - Essen" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="327.67" layoutY="171.12" rotate="-77.366638064725" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="355.88" layoutY="164.3" rotate="12.094757077012103" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="389.98" layoutY="186.0" rotate="50.440332031005504" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="412.23" layoutY="215.28" rotate="-77.366638064725" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="447.72" layoutY="206.70000000000002" rotate="12.094757077012103" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="490.62" layoutY="234.0" rotate="50.440332031005504" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Amsterdam - Frankfurt" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="348.44" layoutY="222.27" rotate="45.70731936854426" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="375.71999999999997" layoutY="249.85999999999999" rotate="43.53119928561417" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="438.36" layoutY="279.63" rotate="45.70731936854425" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="472.68" layoutY="314.34000000000003" rotate="43.53119928561417" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Amsterdam - London" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="251.1" layoutY="193.44" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="290.78" layoutY="194.99" rotate="0.98776039963981" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="315.90000000000003" layoutY="243.36" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="365.82" layoutY="245.31" rotate="0.98776039963981" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Angora - Constantinople" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="867.38" layoutY="594.58" rotate="34.824489156956794" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="900.24" layoutY="618.76" rotate="36.46923439005187" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1091.22" layoutY="748.02" rotate="34.824489156956794" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1132.56" layoutY="778.44" rotate="36.46923439005187" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Angora - Erzurum" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="950.77" layoutY="648.52" rotate="28.76764933884379" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="990.14" layoutY="656.89" rotate="-11.1130405359483" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1014.01" layoutY="639.53" rotate="-99.29330859939712" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1196.13" layoutY="815.88" rotate="28.76764933884379" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1245.66" layoutY="826.4100000000001" rotate="-11.1130405359483" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1275.69" layoutY="804.57" rotate="-99.29330859939712" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Angora - Smyrna" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="824.29" layoutY="664.95" rotate="1.0416266760099742" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="863.35" layoutY="664.64" rotate="-8.275892827075202" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="902.41" layoutY="653.48" rotate="-28.76764933884379" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1037.01" layoutY="836.5500000000001" rotate="1.0416266760099742" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1086.15" layoutY="836.1600000000001" rotate="-8.275892827075202" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1135.29" layoutY="822.12" rotate="-28.76764933884379" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Athina - Brindisi" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="593.34" layoutY="575.36" rotate="67.06789956241022" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="608.84" layoutY="611.63" rotate="67.45693899994212" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="637.05" layoutY="638.91" rotate="17.17590361574674" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="677.97" layoutY="642.32" rotate="-10.304846468766033" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="746.46" layoutY="723.84" rotate="67.06789956241022" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="765.96" layoutY="769.47" rotate="67.45693899994212" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="801.45" layoutY="803.7900000000001" rotate="17.17590361574674" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="852.9300000000001" layoutY="808.08" rotate="-10.304846468766033" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Athina - Sarajevo" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="652.55" layoutY="532.58" rotate="93.0664855011259" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="650.38" layoutY="571.95" rotate="92.00955381302113" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="648.21" layoutY="611.63" rotate="94.84400037508068" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="674.25" layoutY="624.34" rotate="1.9414863909143776" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="820.95" layoutY="670.02" rotate="93.0664855011259" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="818.22" layoutY="719.5500000000001" rotate="92.00955381302113" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="815.49" layoutY="769.47" rotate="94.84400037508068" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="848.25" layoutY="785.46" rotate="1.9414863909143776" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Athina - Smyrna" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="731.91" layoutY="633.64" rotate="-1.9414863909143776" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="771.59" layoutY="642.63" rotate="25.253163394573882" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="920.7900000000001" layoutY="797.1600000000001" rotate="-1.9414863909143776" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="970.71" layoutY="808.47" rotate="25.253163394573882" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Athina - Sofia" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="704.32" layoutY="533.82" rotate="132.13759477388825" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="687.89" layoutY="571.02" rotate="96.88172363063697" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="696.26" layoutY="609.46" rotate="57.9946167919165" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="886.08" layoutY="671.58" rotate="132.13759477388825" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="865.4100000000001" layoutY="718.38" rotate="96.88172363063697" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="875.94" layoutY="766.74" rotate="57.9946167919165" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Barcelona - Madrid" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="137.33" layoutY="591.79" rotate="0.9710219310791666" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="177.01" layoutY="593.03" rotate="3.0127875041833403" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="172.77" layoutY="744.51" rotate="0.9710219310791666" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="222.69" layoutY="746.07" rotate="3.0127875041833403" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Barcelona - Marseille" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="229.71" layoutY="574.12" rotate="-48.621484704117336" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="257.61" layoutY="546.53" rotate="-42.20729763428672" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="289.85" layoutY="522.97" rotate="-29.623748751173814" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="325.5" layoutY="507.15999999999997" rotate="-20.323136829662943" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="288.99" layoutY="722.28" rotate="-48.621484704117336" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="324.09000000000003" layoutY="687.57" rotate="-42.20729763428672" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="364.65000000000003" layoutY="657.9300000000001" rotate="-29.623748751173814" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="409.5" layoutY="638.0400000000001" rotate="-20.323136829662943" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Barcelona - Pamplona" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="199.95" layoutY="528.55" rotate="84.8055710922652" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="204.29" layoutY="568.85" rotate="83.23382517744695" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="251.55" layoutY="664.95" rotate="84.8055710922652" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="257.01" layoutY="715.65" rotate="83.23382517744695" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Berlin - Danzig" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="522.35" layoutY="190.03" rotate="-81.02737338510362" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="537.85" layoutY="152.83" rotate="-54.92624550665171" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="571.95" layoutY="130.2" rotate="-11.888658039627973" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="611.9399999999999" layoutY="130.2" rotate="12.094757077012103" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="657.15" layoutY="239.07000000000002" rotate="-81.02737338510362" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="676.65" layoutY="192.27" rotate="-54.92624550665171" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="719.5500000000001" layoutY="163.8" rotate="-11.888658039627973" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="769.86" layoutY="163.8" rotate="12.094757077012103" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Berlin - Essen" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="450.43" layoutY="205.53" rotate="7.001267557495337" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="489.49" layoutY="210.18" rotate="6.009005957494525" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="566.6700000000001" layoutY="258.57" rotate="7.001267557495337" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="615.8100000000001" layoutY="264.42" rotate="6.009005957494525" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Berlin - Frankfurt(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="425.63" layoutY="280.55" rotate="-23.459024081461557" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="460.66" layoutY="263.19" rotate="-25.676815681838217" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="496.0" layoutY="246.45" rotate="-25.676815681838217" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="535.47" layoutY="352.95" rotate="-23.459024081461557" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="579.54" layoutY="331.11" rotate="-25.676815681838217" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="624.0" layoutY="310.05" rotate="-25.676815681838217" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Berlin - Frankfurt(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="419.12" layoutY="268.15" rotate="-25.676815681838217" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="455.08" layoutY="251.41" rotate="-24.702430227771313" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="490.11" layoutY="234.35999999999999" rotate="-27.012665347938544" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="527.28" layoutY="337.35" rotate="-25.676815681838217" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="572.52" layoutY="316.29" rotate="-24.70243022777131" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="616.59" layoutY="294.84000000000003" rotate="-27.012665347938544" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Berlin - Warszawa(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="543.74" layoutY="226.60999999999999" rotate="-18.741340445192723" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="582.8" layoutY="217.31" rotate="-8.820379552021056" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="621.86" layoutY="215.14" rotate="-2.0454084888872277" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="660.61" layoutY="217.31" rotate="8.972626614896393" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="684.0600000000001" layoutY="285.09000000000003" rotate="-18.741340445192723" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="733.2" layoutY="273.39" rotate="-8.820379552021056" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="782.34" layoutY="270.66" rotate="-2.0454084888872277" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="831.09" layoutY="273.39" rotate="8.972626614896393" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Berlin - Warszawa(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="542.81" layoutY="211.73" rotate="-18.43494882292201" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="582.49" layoutY="202.43" rotate="-7.001267557495337" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="621.24" layoutY="199.64" rotate="-1.9749340108819768" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="661.54" layoutY="202.74" rotate="7.85331330197822" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="682.89" layoutY="266.37" rotate="-18.43494882292201" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="732.8100000000001" layoutY="254.67000000000002" rotate="-7.001267557495337" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="781.5600000000001" layoutY="251.16" rotate="-1.9749340108819768" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="832.26" layoutY="255.06" rotate="7.85331330197822" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Berlin - Wien" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="525.14" layoutY="253.27" rotate="73.20162821869471" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="539.71" layoutY="289.54" rotate="61.63095370672143" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="561.72" layoutY="322.71" rotate="51.34019174590991" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="660.66" layoutY="318.63" rotate="73.20162821869471" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="678.99" layoutY="364.26" rotate="61.63095370672143" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="706.6800000000001" layoutY="405.99" rotate="51.34019174590991" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Brest - Dieppe" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="139.5" layoutY="299.15" rotate="-30.113733150982434" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="178.25" layoutY="287.68" rotate="-3.878524502847706" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="175.5" layoutY="376.35" rotate="-30.113733150982434" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="224.25" layoutY="361.92" rotate="-3.878524502847706" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Brest - Pamplona" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="142.29" layoutY="340.69" rotate="20.897765498838858" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="173.6" layoutY="366.42" rotate="56.309932474020215" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="187.24" layoutY="404.24" rotate="81.86989764584403" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="189.72" layoutY="443.92" rotate="90.0" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="179.01000000000002" layoutY="428.61" rotate="20.897765498838858" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="218.4" layoutY="460.98" rotate="56.309932474020215" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="235.56" layoutY="508.56" rotate="81.86989764584403" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="238.68" layoutY="558.48" rotate="90.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Brest - Paris" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="145.7" layoutY="323.02" rotate="5.9061411137704996" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="185.07" layoutY="327.98" rotate="6.009005957494525" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="223.51" layoutY="332.63" rotate="4.84400037508068" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="183.3" layoutY="406.38" rotate="5.9061411137704996" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="232.83" layoutY="412.62" rotate="6.009005957494525" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="281.19" layoutY="418.47" rotate="4.84400037508068" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Brindisi - Palermo" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="545.91" layoutY="649.45" rotate="-52.125016348901795" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="572.26" layoutY="619.07" rotate="-42.87890360333855" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="580.63" layoutY="580.9399999999999" rotate="-113.86017519134235" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="686.7900000000001" layoutY="817.0500000000001" rotate="-52.125016348901795" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="719.94" layoutY="778.83" rotate="-42.87890360333855" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="730.47" layoutY="730.86" rotate="-113.86017519134235" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Brindisi - Roma" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="516.15" layoutY="516.46" rotate="-7.989326766396897" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="553.35" layoutY="530.72" rotate="48.621484704117336" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="649.35" layoutY="649.74" rotate="-7.989326766396897" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="696.15" layoutY="667.6800000000001" rotate="48.621484704117336" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bruxelles - Dieppe" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="239.94" layoutY="277.45" rotate="-33.4248111826038" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="272.8" layoutY="254.82" rotate="-36.46923439005187" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="301.86" layoutY="349.05" rotate="-33.4248111826038" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="343.2" layoutY="320.58" rotate="-36.46923439005187" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bruxelles - Frankfurt" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="327.67" layoutY="249.85999999999999" rotate="-14.281095735970823" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="366.11" layoutY="260.4" rotate="42.929969346958906" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="412.23" layoutY="314.34000000000003" rotate="-14.281095735970823" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="460.59000000000003" layoutY="327.6" rotate="42.929969346958906" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bruxelles - Paris(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="268.15" layoutY="306.9" rotate="-61.76255446183275" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="286.75" layoutY="272.18" rotate="-64.3231843181618" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="337.35" layoutY="386.1" rotate="-61.76255446183275" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="360.75" layoutY="342.42" rotate="-64.3231843181618" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bruxelles - Paris(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="280.55" layoutY="313.41" rotate="-62.10272896905237" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="299.15" layoutY="278.69" rotate="-62.10272896905237" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="352.95" layoutY="394.29" rotate="-62.10272896905237" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="376.35" layoutY="350.61" rotate="-62.10272896905237" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bucuresti - Budapest" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="655.96" layoutY="380.37" rotate="26.56505117707799" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="690.99" layoutY="399.28" rotate="27.95096902789018" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="725.4" layoutY="417.88" rotate="27.474431626277127" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="760.74" layoutY="436.17" rotate="26.56505117707799" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="825.24" layoutY="478.53000000000003" rotate="26.56505117707799" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="869.3100000000001" layoutY="502.32" rotate="27.95096902789018" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="912.6" layoutY="525.72" rotate="27.474431626277127" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="957.0600000000001" layoutY="548.73" rotate="26.56505117707799" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bucuresti - Constantinople" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="799.49" layoutY="474.92" rotate="66.13982480865766" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="814.99" layoutY="510.88" rotate="66.92958775017536" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="830.18" layoutY="546.84" rotate="66.03751102542182" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1005.8100000000001" layoutY="597.48" rotate="66.13982480865766" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1025.31" layoutY="642.72" rotate="66.92958775017536" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1044.42" layoutY="687.96" rotate="66.03751102542182" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bucuresti - Kyiv" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="828.9399999999999" layoutY="305.04" rotate="106.50436138175502" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="816.85" layoutY="342.24" rotate="110.07152586453873" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="804.76" layoutY="379.75" rotate="108.75865034784223" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="792.36" layoutY="416.64" rotate="109.09349200048563" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1042.8600000000001" layoutY="383.76" rotate="106.50436138175502" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1027.65" layoutY="430.56" rotate="110.07152586453873" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1012.44" layoutY="477.75" rotate="108.75865034784223" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="996.84" layoutY="524.16" rotate="109.09349200048563" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bucuresti - Sevastopol" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="810.65" layoutY="428.11" rotate="-45.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="846.3" layoutY="407.65" rotate="-14.995079129175988" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="886.91" layoutY="412.3" rotate="25.301378625419723" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="917.91" layoutY="437.1" rotate="52.733598099022856" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1019.85" layoutY="538.59" rotate="-45.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1064.7" layoutY="512.85" rotate="-14.995079129175988" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1115.79" layoutY="518.7" rotate="25.301378625419723" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1154.79" layoutY="549.9" rotate="52.733598099022856" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Bucuresti - Sofia" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="749.89" layoutY="501.89" rotate="-16.606980578617005" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="775.0" layoutY="472.75" rotate="-82.27817419986903" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="943.4100000000001" layoutY="631.41" rotate="-16.606980578617005" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="975.0" layoutY="594.75" rotate="-82.27817419986903" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Budapest - Kyiv" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="643.25" layoutY="347.82" rotate="-48.4473868518652" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="672.08" layoutY="321.16" rotate="-34.824489156956794" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="706.18" layoutY="299.77" rotate="-28.36904629327858" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="742.45" layoutY="284.58" rotate="-18.758650347842234" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="781.2" layoutY="276.52" rotate="-4.085616779974877" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="820.88" layoutY="276.83" rotate="1.0230301886678357" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="809.25" layoutY="437.58000000000004" rotate="-48.4473868518652" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="845.52" layoutY="404.04" rotate="-34.824489156956794" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="888.4200000000001" layoutY="377.13" rotate="-28.36904629327858" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="934.0500000000001" layoutY="358.02000000000004" rotate="-18.758650347842234" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="982.8000000000001" layoutY="347.88" rotate="-4.085616779974877" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1032.72" layoutY="348.27000000000004" rotate="1.0230301886678357" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Budapest - Sarajevo" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="636.12" layoutY="400.83" rotate="81.72410717292479" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="641.7" layoutY="439.58" rotate="79.8753283446022" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="647.59" layoutY="478.64" rotate="82.87498365109819" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="800.28" layoutY="504.27000000000004" rotate="81.72410717292479" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="807.3000000000001" layoutY="553.02" rotate="79.8753283446022" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="814.71" layoutY="602.16" rotate="82.87498365109819" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Budapest - Wien(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="603.57" layoutY="358.36" rotate="31.476839349583983" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="759.33" layoutY="450.84000000000003" rotate="31.476839349583983" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Budapest - Wien(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="596.4399999999999" layoutY="369.52" rotate="30.96375653207352" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="750.36" layoutY="464.88" rotate="30.96375653207352" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Budapest - Zagrab" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="612.25" layoutY="396.18" rotate="120.11373315098245" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="586.83" layoutY="427.49" rotate="140.57219780396383" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="770.25" layoutY="498.42" rotate="120.11373315098245" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="738.27" layoutY="537.8100000000001" rotate="140.57219780396383" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Cadiz - Lisboa" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="31.0" layoutY="635.81" rotate="65.63754698468782" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="62.0" layoutY="659.37" rotate="11.1130405359483" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="39.0" layoutY="799.89" rotate="65.63754698468782" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="78.0" layoutY="829.53" rotate="11.1130405359483" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Cadiz - Madrid" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="117.17999999999999" layoutY="658.4399999999999" rotate="-20.323136829662943" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="137.95" layoutY="637.05" rotate="-109.05770451012833" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="114.39" layoutY="605.12" rotate="-138.5322945838909" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="147.42000000000002" layoutY="828.36" rotate="-20.323136829662943" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="173.55" layoutY="801.45" rotate="-109.05770451012833" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="143.91" layoutY="761.28" rotate="-138.5322945838909" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Constantinople - Sevastopol" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="924.11" layoutY="490.73" rotate="91.00508600525419" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="912.02" layoutY="528.55" rotate="125.41705527646744" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="885.67" layoutY="541.88" rotate="-142.54942176826327" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="859.63" layoutY="555.83" rotate="127.8749836510982" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1162.5900000000001" layoutY="617.37" rotate="91.00508600525419" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1147.38" layoutY="664.95" rotate="125.41705527646744" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1114.23" layoutY="681.72" rotate="-142.54942176826327" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1081.47" layoutY="699.27" rotate="127.8749836510982" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Constantinople - Smyrna" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="806.93" layoutY="636.43" rotate="-64.74683660542613" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="824.91" layoutY="600.47" rotate="-65.72555886556054" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1015.1700000000001" layoutY="800.6700000000001" rotate="-64.74683660542613" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1037.79" layoutY="755.4300000000001" rotate="-65.72555886556054" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Constantinople - Sofia" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="747.72" layoutY="528.86" rotate="29.248826336546973" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="782.4399999999999" layoutY="547.46" rotate="28.44292862436335" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="816.54" layoutY="566.37" rotate="30.113733150982434" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="940.6800000000001" layoutY="665.34" rotate="29.248826336546973" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="984.36" layoutY="688.74" rotate="28.44292862436335" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1027.26" layoutY="712.53" rotate="30.113733150982434" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Danzig - Riga" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="645.73" layoutY="113.15" rotate="-74.19748604606448" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="664.02" layoutY="77.81" rotate="-52.926926682689604" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="696.57" layoutY="55.18" rotate="-18.121860247901353" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="812.37" layoutY="142.35" rotate="-74.19748604606448" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="835.38" layoutY="97.89" rotate="-52.926926682689604" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="876.33" layoutY="69.42" rotate="-18.121860247901353" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Danzig - Warszawa" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="662.16" layoutY="153.14" rotate="32.005383208083494" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="684.17" layoutY="185.38" rotate="76.93068210371783" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="833.0400000000001" layoutY="192.66" rotate="32.005383208083494" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="860.73" layoutY="233.22" rotate="76.93068210371783" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Dieppe - London(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="204.91" layoutY="260.09" rotate="95.0131137550358" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="208.63" layoutY="221.96" rotate="94.92710994764901" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="257.79" layoutY="327.21000000000004" rotate="95.0131137550358" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="262.47" layoutY="279.24" rotate="94.92710994764901" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Dieppe - London(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="219.79" layoutY="261.95" rotate="-85.15599962491933" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="223.2" layoutY="222.89" rotate="-83.99099404250549" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="276.51" layoutY="329.55" rotate="-85.15599962491933" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="280.8" layoutY="280.41" rotate="-83.99099404250549" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Dieppe - Paris" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="235.29" layoutY="310.31" rotate="45.0" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="296.01" layoutY="390.39" rotate="45.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Edinburgh - London(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="171.43" layoutY="59.519999999999996" rotate="65.15761089454482" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="186.62" layoutY="95.79" rotate="67.45693899994212" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="201.5" layoutY="131.44" rotate="67.06789956241022" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="216.69" layoutY="167.09" rotate="66.54097591853845" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="215.67000000000002" layoutY="74.88" rotate="65.15761089454482" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="234.78" layoutY="120.51" rotate="67.45693899994212" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="253.5" layoutY="165.36" rotate="67.06789956241022" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="272.61" layoutY="210.21" rotate="66.54097591853845" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Edinburgh - London(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="158.41" layoutY="65.41" rotate="65.72555886556054" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="173.91" layoutY="101.37" rotate="66.54097591853845" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="189.1" layoutY="136.4" rotate="66.25050550713323" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="203.98" layoutY="172.05" rotate="66.66595872329023" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="199.29000000000002" layoutY="82.29" rotate="65.72555886556054" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="218.79000000000002" layoutY="127.53" rotate="66.54097591853845" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="237.9" layoutY="171.6" rotate="66.25050550713323" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="256.62" layoutY="216.45000000000002" rotate="66.66595872329023" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Erzurum - Sevastopol" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="938.68" layoutY="491.04" rotate="90.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="941.47" layoutY="529.48" rotate="80.8698235177213" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="956.04" layoutY="566.68" rotate="55.175510843043206" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="984.87" layoutY="595.2" rotate="33.146995832256" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1180.92" layoutY="617.76" rotate="90.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1184.43" layoutY="666.12" rotate="80.8698235177213" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1202.76" layoutY="712.9200000000001" rotate="55.175510843043206" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1239.03" layoutY="748.8000000000001" rotate="33.146995832256" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Erzurum - Sochi" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="1025.17" layoutY="506.54" rotate="97.12501634890181" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1019.59" layoutY="545.6" rotate="99.1301764822787" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1014.01" layoutY="584.35" rotate="97.25319461272534" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1289.73" layoutY="637.26" rotate="97.12501634890181" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1282.71" layoutY="686.4" rotate="99.1301764822787" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1275.69" layoutY="735.15" rotate="97.25319461272534" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Essen - Frankfurt" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="412.92" layoutY="255.44" rotate="-26.56505117707799" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="432.76" layoutY="232.19" rotate="-117.01266534793854" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="519.48" layoutY="321.36" rotate="-26.56505117707799" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="544.44" layoutY="292.11" rotate="-117.01266534793854" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Essen - Kobenhavn(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="419.74" layoutY="178.56" rotate="-57.38075692880717" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="442.06" layoutY="145.7" rotate="-56.309932474020215" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="463.76" layoutY="112.84" rotate="-56.309932474020215" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="528.0600000000001" layoutY="224.64000000000001" rotate="-57.38075692880717" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="556.14" layoutY="183.3" rotate="-56.309932474020215" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="583.44" layoutY="141.96" rotate="-56.309932474020215" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Essen - Kobenhavn(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="431.21" layoutY="186.0" rotate="-55.49147701233161" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="453.21999999999997" layoutY="152.52" rotate="-56.88865803962798" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="474.61" layoutY="121.52" rotate="-55.49147701233161" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="542.49" layoutY="234.0" rotate="-55.49147701233161" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="570.1800000000001" layoutY="191.88" rotate="-56.88865803962798" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="597.09" layoutY="152.88" rotate="-55.49147701233161" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Frankfurt - Munchen" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="405.48" layoutY="310.0" rotate="71.56505117707799" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="424.39" layoutY="331.39" rotate="-16.606980578617005" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="510.12" layoutY="390.0" rotate="71.56505117707799" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="533.91" layoutY="416.91" rotate="-16.606980578617005" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Frankfurt - Paris(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="306.28" layoutY="343.17" rotate="-16.886791123944043" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="342.24" layoutY="326.74" rotate="-32.61924307119283" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="375.41" layoutY="304.73" rotate="-35.53767779197438" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="385.32" layoutY="431.73" rotate="-16.886791123944043" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="430.56" layoutY="411.06" rotate="-32.61924307119283" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="472.29" layoutY="383.37" rotate="-35.53767779197438" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Frankfurt - Paris(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="299.15" layoutY="330.46" rotate="-19.98310652189998" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="335.42" layoutY="314.03" rotate="-32.855721950433" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="368.28" layoutY="292.33" rotate="-34.5085229876684" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="376.35" layoutY="415.74" rotate="-19.98310652189998" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="421.98" layoutY="395.07" rotate="-32.855721950433" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="463.32" layoutY="367.77000000000004" rotate="-34.5085229876684" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kharkov - Kyiv" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="859.32" layoutY="298.84" rotate="69.67686317033706" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="885.36" layoutY="329.21999999999997" rotate="28.30075576600638" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="924.11" layoutY="339.45" rotate="3.0127875041833403" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="963.48" layoutY="334.8" rotate="-18.43494882292201" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1081.08" layoutY="375.96000000000004" rotate="69.67686317033706" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1113.8400000000001" layoutY="414.18" rotate="28.30075576600638" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1162.5900000000001" layoutY="427.05" rotate="3.0127875041833403" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1212.1200000000001" layoutY="421.2" rotate="-18.43494882292201" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kharkov - Moskva" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="1009.67" layoutY="304.42" rotate="-45.690277197865086" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1030.1299999999999" layoutY="270.94" rotate="-74.47588900324574" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1032.92" layoutY="230.64" rotate="-98.130102354156" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1021.14" layoutY="191.89" rotate="-117.01266534793854" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1270.23" layoutY="382.98" rotate="-45.690277197865086" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1295.97" layoutY="340.86" rotate="-74.47588900324574" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1299.48" layoutY="290.16" rotate="-98.130102354156" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1284.66" layoutY="241.41" rotate="-117.01266534793854" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kharkov - Rostov" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="1023.62" layoutY="327.36" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1035.71" layoutY="355.57" rotate="88.99491399474583" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1287.78" layoutY="411.84000000000003" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1302.99" layoutY="447.33000000000004" rotate="88.99491399474583" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kobenhavn - Stockholm(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="501.27" layoutY="70.67999999999999" rotate="-47.12109639666145" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="530.1" layoutY="43.71" rotate="-41.55261314813481" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="562.96" layoutY="21.08" rotate="-28.30075576600638" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="630.63" layoutY="88.92" rotate="-47.12109639666145" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="666.9" layoutY="54.99" rotate="-41.55261314813481" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="708.24" layoutY="26.52" rotate="-28.30075576600638" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kobenhavn - Stockholm(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="511.5" layoutY="81.84" rotate="-46.39718102729638" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="539.4" layoutY="54.25" rotate="-41.378515295882664" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="572.57" layoutY="31.31" rotate="-27.89727103094763" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="643.5" layoutY="102.96000000000001" rotate="-46.39718102729638" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="678.6" layoutY="68.25" rotate="-41.378515295882664" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="720.33" layoutY="39.39" rotate="-27.89727103094763" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kyiv - Smolensk" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="879.47" layoutY="273.11" rotate="3.0127875041833403" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="916.05" layoutY="258.54" rotate="-44.292680631455745" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="925.04" layoutY="220.41" rotate="-106.7983717813053" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1106.43" layoutY="343.59000000000003" rotate="3.0127875041833403" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1152.45" layoutY="325.26" rotate="-44.292680631455745" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1163.76" layoutY="277.29" rotate="-106.7983717813053" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kyiv - Warszawa" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="708.97" layoutY="233.43" rotate="46.43209618416465" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="741.52" layoutY="256.06" rotate="20.323136829662943" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="780.27" layoutY="261.95" rotate="-3.0127875041833403" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="819.95" layoutY="262.57" rotate="3.0127875041833403" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="891.9300000000001" layoutY="293.67" rotate="46.43209618416465" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="932.88" layoutY="322.14" rotate="20.323136829662943" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="981.63" layoutY="329.55" rotate="-3.0127875041833403" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1031.55" layoutY="330.33" rotate="3.0127875041833403" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Kyiv - Wilno" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="833.28" layoutY="204.91" rotate="32.855721950433" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="850.64" layoutY="241.49" rotate="90.0" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1048.32" layoutY="257.79" rotate="32.855721950433" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1070.16" layoutY="303.81" rotate="90.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Lisboa - Madrid" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="18.6" layoutY="582.8" rotate="-90.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="30.69" layoutY="555.52" rotate="1.9414863909143776" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="68.82" layoutY="568.85" rotate="36.098283967108" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="23.400000000000002" layoutY="733.2" rotate="-90.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="38.61" layoutY="698.88" rotate="1.9414863909143776" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="86.58" layoutY="715.65" rotate="36.098283967108" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Madrid - Pamplona(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="115.32" layoutY="570.71" rotate="-50.063616853030084" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="141.98" layoutY="541.88" rotate="-45.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="172.67" layoutY="516.46" rotate="-33.146995832256" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="145.08" layoutY="717.99" rotate="-50.063616853030084" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="178.62" layoutY="681.72" rotate="-45.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="217.23000000000002" layoutY="649.74" rotate="-33.146995832256" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Madrid - Pamplona(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="106.02" layoutY="561.1" rotate="-49.18491612511842" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="131.75" layoutY="531.34" rotate="-47.12109639666145" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="161.82" layoutY="506.54" rotate="-32.61924307119283" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="133.38" layoutY="705.9" rotate="-49.18491612511842" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="165.75" layoutY="668.46" rotate="-47.12109639666145" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="203.58" layoutY="637.26" rotate="-32.61924307119283" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Marseille - Pamplona" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="227.85" layoutY="510.26" rotate="18.121860247901353" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="248.62" layoutY="490.11" rotate="-69.32557523912611" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="280.55" layoutY="467.17" rotate="-1.005086005254181" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="320.23" layoutY="477.71" rotate="26.113912630290713" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="286.65000000000003" layoutY="641.94" rotate="18.121860247901353" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="312.78000000000003" layoutY="616.59" rotate="-69.32557523912611" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="352.95" layoutY="587.73" rotate="-1.005086005254181" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="402.87" layoutY="600.99" rotate="26.113912630290706" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Marseille - Paris" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="342.86" layoutY="468.71999999999997" rotate="-123.69006752597979" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="313.41" layoutY="442.37" rotate="-152.10272896905238" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="283.34" layoutY="415.71" rotate="-124.75591255354136" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="270.63" layoutY="377.27" rotate="-93.1221304621157" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="431.34000000000003" layoutY="589.6800000000001" rotate="-123.69006752597979" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="394.29" layoutY="556.53" rotate="-152.10272896905238" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="356.46000000000004" layoutY="522.99" rotate="-124.75591255354136" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="340.47" layoutY="474.63" rotate="-93.1221304621157" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Marseille - Roma" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="384.4" layoutY="482.36" rotate="-36.46923439005187" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="416.02" layoutY="459.73" rotate="-36.86989764584402" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="441.44" layoutY="472.75" rotate="52.926926682689604" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="465.0" layoutY="504.37" rotate="52.926926682689604" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="483.6" layoutY="606.84" rotate="-36.46923439005187" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="523.38" layoutY="578.37" rotate="-36.86989764584402" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="555.36" layoutY="594.75" rotate="52.926926682689604" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="585.0" layoutY="634.53" rotate="52.926926682689604" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Marseille - Zurich" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="381.3" layoutY="423.77" rotate="104.79676224505735" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="371.38" layoutY="462.83" rotate="106.7983717813053" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="479.7" layoutY="533.13" rotate="104.79676224505735" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="467.22" layoutY="582.27" rotate="106.7983717813053" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Moskva - Petrograd" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="932.48" layoutY="49.29" rotate="17.47477425625567" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="967.8199999999999" layoutY="68.2" rotate="36.46923439005187" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="992.0" layoutY="99.82" rotate="63.43494882292201" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1002.54" layoutY="137.64" rotate="85.91438322002512" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1173.1200000000001" layoutY="62.010000000000005" rotate="17.47477425625567" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1217.5800000000002" layoutY="85.8" rotate="36.46923439005187" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1248.0" layoutY="125.58" rotate="63.43494882292201" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1261.26" layoutY="173.16" rotate="85.91438322002512" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Moskva - Smolensk" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="946.12" layoutY="194.68" rotate="6.1155035662854065" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="983.9399999999999" layoutY="183.21" rotate="-36.098283967108" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1190.28" layoutY="244.92000000000002" rotate="6.1155035662854065" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1237.8600000000001" layoutY="230.49" rotate="-36.098283967108" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Munchen - Venezia" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="460.04" layoutY="363.94" rotate="79.50852298766841" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="467.48" layoutY="403.62" rotate="77.9052429229879" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="578.76" layoutY="457.86" rotate="79.50852298766841" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="588.12" layoutY="507.78000000000003" rotate="77.9052429229879" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Munchen - Wien" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="476.46999999999997" layoutY="350.92" rotate="52.733598099022856" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="512.12" layoutY="368.59" rotate="2.96093613416375" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="549.9399999999999" layoutY="356.19" rotate="-38.811384036758405" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="599.4300000000001" layoutY="441.48" rotate="52.733598099022856" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="644.28" layoutY="463.71000000000004" rotate="2.96093613416375" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="691.86" layoutY="448.11" rotate="-38.811384036758405" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Munchen - Zurich" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="407.03" layoutY="377.89" rotate="-42.20729763428672" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="435.55" layoutY="349.68" rotate="-42.929969346958906" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="512.07" layoutY="475.41" rotate="-42.20729763428672" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="547.95" layoutY="439.92" rotate="-42.929969346958906" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Palermo - Roma" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="535.68" layoutY="639.84" rotate="126.46923439005188" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="548.39" layoutY="602.64" rotate="90.98776039963982" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="536.92" layoutY="564.82" rotate="51.95295746817391" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="507.15999999999997" layoutY="537.85" rotate="28.36904629327858" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="673.9200000000001" layoutY="804.96" rotate="126.46923439005188" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="689.91" layoutY="758.1600000000001" rotate="90.98776039963982" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="675.48" layoutY="710.58" rotate="51.95295746817391" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="638.0400000000001" layoutY="676.65" rotate="28.36904629327858" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Palermo - Smyrna" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="766.63" layoutY="662.78" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="726.95" layoutY="662.78" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="688.51" layoutY="662.78" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="650.07" layoutY="662.78" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="610.08" layoutY="662.78" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="570.4" layoutY="662.78" rotate="0.0" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="964.47" layoutY="833.82" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="914.5500000000001" layoutY="833.82" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="866.19" layoutY="833.82" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="817.83" layoutY="833.82" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="767.52" layoutY="833.82" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="717.6" layoutY="833.82" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Pamplona - Paris(1)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="199.33" layoutY="473.06" rotate="-53.901716032892" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="219.17" layoutY="438.03" rotate="-69.77514056883192" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="231.88" layoutY="401.14" rotate="-75.96375653207353" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="240.25" layoutY="362.08" rotate="-81.17962044797895" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="250.77" layoutY="595.14" rotate="-53.901716032892" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="275.73" layoutY="551.07" rotate="-69.77514056883192" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="291.72" layoutY="504.66" rotate="-75.96375653207353" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="302.25" layoutY="455.52000000000004" rotate="-81.17962044797895" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Pamplona - Paris(2)" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="212.97" layoutY="477.71" rotate="-53.32565033042683" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="233.12" layoutY="442.06" rotate="-67.83365417791754" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="246.14" layoutY="405.48" rotate="-74.05460409907715" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="254.51" layoutY="367.04" rotate="-83.11827636936306" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="267.93" layoutY="600.99" rotate="-53.32565033042683" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="293.28000000000003" layoutY="556.14" rotate="-67.83365417791754" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="309.66" layoutY="510.12" rotate="-74.05460409907715" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="320.19" layoutY="461.76" rotate="-83.11827636936306" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Paris - Zurich" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="290.46999999999997" layoutY="368.28" rotate="58.86102756302115" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="319.61" layoutY="394.63" rotate="25.14478563067895" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="358.67" layoutY="403.0" rotate="0.0" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="365.43" layoutY="463.32" rotate="58.86102756302115" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="402.09000000000003" layoutY="496.47" rotate="25.14478563067895" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="451.23" layoutY="507.0" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Petrograd - Riga" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="754.23" layoutY="45.26" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="794.22" layoutY="45.88" rotate="-2.0454084888872277" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="833.28" layoutY="44.64" rotate="-2.121096396661454" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="872.34" layoutY="44.33" rotate="-3.0664855011258934" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="948.87" layoutY="56.940000000000005" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="999.1800000000001" layoutY="57.72" rotate="-2.0454084888872277" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1048.32" layoutY="56.160000000000004" rotate="-2.121096396661454" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1097.46" layoutY="55.77" rotate="-3.0664855011258934" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Petrograd - Stockholm" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="616.28" layoutY="35.339999999999996" rotate="50.71059313749964" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="644.8" layoutY="29.759999999999998" rotate="-36.46923439005187" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="681.6899999999999" layoutY="16.43" rotate="1.0416266760099742" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="721.06" layoutY="16.43" rotate="1.0230301886678357" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="760.43" layoutY="15.81" rotate="-1.005086005254181" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="799.49" layoutY="16.12" rotate="0.0" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="838.55" layoutY="16.43" rotate="-1.0416266760099742" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="878.23" layoutY="24.18" rotate="23.57470620191262" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="775.32" layoutY="44.46" rotate="50.71059313749964" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="811.2" layoutY="37.44" rotate="-36.46923439005187" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="857.61" layoutY="20.67" rotate="1.0416266760099742" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="907.14" layoutY="20.67" rotate="1.0230301886678357" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="956.6700000000001" layoutY="19.89" rotate="-1.005086005254181" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1005.8100000000001" layoutY="20.28" rotate="0.0" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1054.95" layoutY="20.67" rotate="-1.0416266760099742" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1104.8700000000001" layoutY="30.42" rotate="23.57470620191262" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Petrograd - Wilno" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="822.12" layoutY="161.82" rotate="-53.53076560994813" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="845.68" layoutY="129.89" rotate="-55.750966993188044" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="868.31" layoutY="97.96" rotate="-54.34467190209969" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="890.9399999999999" layoutY="66.65" rotate="-54.11786275379579" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1034.28" layoutY="203.58" rotate="-53.53076560994813" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1063.92" layoutY="163.41" rotate="-55.750966993188044" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1092.39" layoutY="123.24000000000001" rotate="-54.3446719020997" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1120.8600000000001" layoutY="83.85000000000001" rotate="-54.11786275379579" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Riga - Wilno" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="723.54" layoutY="73.78" rotate="99.78240703180728" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="728.5" layoutY="112.84" rotate="65.22485943116808" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="753.92" layoutY="142.91" rotate="31.138972436978854" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="787.4" layoutY="163.99" rotate="32.855721950433" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="910.26" layoutY="92.82000000000001" rotate="99.78240703180728" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="916.5" layoutY="141.96" rotate="65.22485943116808" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="948.48" layoutY="179.79" rotate="31.138972436978854" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="990.6" layoutY="206.31" rotate="32.855721950433" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Roma - Venezia" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="478.95" layoutY="458.8" rotate="78.88695946405171" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="486.08" layoutY="498.17" rotate="79.69515353123397" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="602.5500000000001" layoutY="577.2" rotate="78.88695946405171" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="611.52" layoutY="626.73" rotate="79.69515353123397" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Rostov - Sevastopol" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="946.12" layoutY="435.86" rotate="-82.14668669802178" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="951.39" layoutY="396.8" rotate="-80.8698235177213" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="967.8199999999999" layoutY="370.76" rotate="7.85331330197822" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1006.5699999999999" layoutY="377.58" rotate="9.950626687951603" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1190.28" layoutY="548.34" rotate="-82.14668669802178" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1196.91" layoutY="499.20000000000005" rotate="-80.8698235177213" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1217.5800000000002" layoutY="466.44" rotate="7.85331330197822" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1266.3300000000002" layoutY="475.02000000000004" rotate="9.950626687951603" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Rostov - Sochi" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="1033.85" layoutY="411.06" rotate="93.0664855011259" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1031.68" layoutY="450.43" rotate="94.01417569541103" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1300.65" layoutY="517.14" rotate="93.0664855011259" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1297.92" layoutY="566.6700000000001" rotate="94.01417569541103" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Sarajevo - Sofia" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="679.52" layoutY="491.65999999999997" rotate="-24.775140568831922" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="708.97" layoutY="491.04" rotate="61.63095370672143" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="854.88" layoutY="618.5400000000001" rotate="-24.775140568831922" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="891.9300000000001" layoutY="617.76" rotate="61.63095370672143" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Sarajevo - Zagrab" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="566.37" layoutY="472.13" rotate="82.99873244250466" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="586.52" layoutY="505.61" rotate="35.655328097900316" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="626.2" layoutY="511.81" rotate="-19.384515679357836" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="712.53" layoutY="593.97" rotate="82.99873244250466" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="737.88" layoutY="636.09" rotate="35.655328097900316" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="787.8000000000001" layoutY="643.89" rotate="-19.384515679357836" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Sevastopol - Sochi" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="963.48" layoutY="466.86" rotate="8.13010235415598" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="1001.92" layoutY="473.06" rotate="8.13010235415598" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1212.1200000000001" layoutY="587.34" rotate="8.13010235415598" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1260.48" layoutY="595.14" rotate="8.13010235415598" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Smolensk - Wilno" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="833.59" layoutY="170.19" rotate="-54.46232220802562" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="859.32" layoutY="155.62" rotate="35.3112134396332" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="891.56" layoutY="179.18" rotate="35.3112134396332" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="1048.71" layoutY="214.11" rotate="-54.46232220802562" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1081.08" layoutY="195.78" rotate="35.3112134396332" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="1121.64" layoutY="225.42000000000002" rotate="35.3112134396332" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Venezia - Zagrab" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="500.96" layoutY="421.91" rotate="-14.995079129175988" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="539.71" layoutY="428.73" rotate="32.31961650818018" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="630.24" layoutY="530.79" rotate="-14.995079129175988" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="678.99" layoutY="539.37" rotate="32.31961650818018" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Venezia - Zurich" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="411.99" layoutY="408.89" rotate="27.89727103094763" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="447.33" layoutY="427.18" rotate="28.76764933884379" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="518.3100000000001" layoutY="514.41" rotate="27.89727103094763" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="562.77" layoutY="537.4200000000001" rotate="28.76764933884379" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Warszawa - Wien" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="599.23" layoutY="329.53" rotate="-30.618605408909403" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="630.23" layoutY="305.96999999999997" rotate="-42.06432655357883" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="656.89" layoutY="276.52" rotate="-53.901716032892" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="678.28" layoutY="243.35" rotate="-58.52316065041602" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="753.87" layoutY="414.57" rotate="-30.618605408909403" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="792.87" layoutY="384.93" rotate="-42.06432655357883" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="826.4100000000001" layoutY="347.88" rotate="-53.901716032892" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="853.32" layoutY="306.15000000000003" rotate="-58.52316065041602" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Warszawa - Wilno" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="708.35" layoutY="192.51" rotate="-62.10272896905237" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="740.28" layoutY="168.64" rotate="-12.528807709151511" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="779.34" layoutY="176.7" rotate="32.005383208083494" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="891.15" layoutY="242.19" rotate="-62.10272896905237" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="931.32" layoutY="212.16" rotate="-12.528807709151511" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="980.46" layoutY="222.3" rotate="32.005383208083494" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Wien - Zagrab" onMouseClicked="#choixRouteOuVille">
-            <Rectangle height="12.4" width="37.2" layoutX="565.75" layoutY="413.54" rotate="-85.07289005235099" x="-18.6" y="-6.2" />
-            <Rectangle height="12.4" width="37.2" layoutX="568.23" layoutY="374.79" rotate="-86.8778695378843" x="-18.6" y="-6.2" />
+            <Rectangle height="15.600000000000001" layoutX="711.75" layoutY="520.26" rotate="-85.07289005235099" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
+            <Rectangle height="15.600000000000001" layoutX="714.87" layoutY="471.51" rotate="-86.8778695378843" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
     </Group>
 
-    <Group id="villes">
-        <Circle id="Cadiz" onMouseClicked="#choixRouteOuVille" layoutX="89.28" layoutY="664.64" radius="7.4399999999999995" />
-        <Circle id="Madrid" onMouseClicked="#choixRouteOuVille" layoutX="91.14" layoutY="586.52" radius="7.4399999999999995" />
-        <Circle id="Barcelona" onMouseClicked="#choixRouteOuVille" layoutX="208.32" layoutY="595.82" radius="7.4399999999999995" />
-        <Circle id="Lisboa" onMouseClicked="#choixRouteOuVille" layoutX="19.84" layoutY="608.22" radius="7.4399999999999995" />
-        <Circle id="Pamplona" onMouseClicked="#choixRouteOuVille" layoutX="197.16" layoutY="499.1" radius="7.4399999999999995" />
-        <Circle id="Paris" onMouseClicked="#choixRouteOuVille" layoutX="263.5" layoutY="337.28" radius="7.4399999999999995" />
-        <Circle id="Dieppe" onMouseClicked="#choixRouteOuVille" layoutX="211.42" layoutY="289.54" radius="7.4399999999999995" />
-        <Circle id="Brest" onMouseClicked="#choixRouteOuVille" layoutX="116.56" layoutY="319.92" radius="7.4399999999999995" />
-        <Circle id="London" onMouseClicked="#choixRouteOuVille" layoutX="221.96" layoutY="194.06" radius="7.4399999999999995" />
-        <Circle id="Amsterdam" onMouseClicked="#choixRouteOuVille" layoutX="324.88" layoutY="197.78" radius="7.4399999999999995" />
-        <Circle id="Bruxelles" onMouseClicked="#choixRouteOuVille" layoutX="300.7" layoutY="247.38" radius="7.4399999999999995" />
-        <Circle id="Edinburgh" onMouseClicked="#choixRouteOuVille" layoutX="151.9" layoutY="34.72" radius="7.4399999999999995" />
-        <Circle id="Zurich" onMouseClicked="#choixRouteOuVille" layoutX="385.64" layoutY="395.56" radius="7.4399999999999995" />
-        <Circle id="Marseille" onMouseClicked="#choixRouteOuVille" layoutX="356.5" layoutY="494.14" radius="7.4399999999999995" />
-        <Circle id="Frankfurt" onMouseClicked="#choixRouteOuVille" layoutX="395.56" layoutY="281.48" radius="7.4399999999999995" />
-        <Circle id="Munchen" onMouseClicked="#choixRouteOuVille" layoutX="456.94" layoutY="328.6" radius="7.4399999999999995" />
-        <Circle id="Wien" onMouseClicked="#choixRouteOuVille" layoutX="576.6" layoutY="346.58" radius="7.4399999999999995" />
-        <Circle id="Venezia" onMouseClicked="#choixRouteOuVille" layoutX="473.06" layoutY="430.28" radius="7.4399999999999995" />
-        <Circle id="Roma" onMouseClicked="#choixRouteOuVille" layoutX="482.98" layoutY="526.38" radius="7.4399999999999995" />
-        <Circle id="Brindisi" onMouseClicked="#choixRouteOuVille" layoutX="573.5" layoutY="553.04" radius="7.4399999999999995" />
-        <Circle id="Palermo" onMouseClicked="#choixRouteOuVille" layoutX="521.42" layoutY="664.64" radius="7.4399999999999995" />
-        <Circle id="Athina" onMouseClicked="#choixRouteOuVille" layoutX="704.32" layoutY="634.88" radius="7.4399999999999995" />
-        <Circle id="Sofia" onMouseClicked="#choixRouteOuVille" layoutX="723.54" layoutY="514.6" radius="7.4399999999999995" />
-        <Circle id="Sarajevo" onMouseClicked="#choixRouteOuVille" layoutX="652.86" layoutY="505.3" radius="7.4399999999999995" />
-        <Circle id="Zagrab" onMouseClicked="#choixRouteOuVille" layoutX="562.96" layoutY="442.68" radius="7.4399999999999995" />
-        <Circle id="Budapest" onMouseClicked="#choixRouteOuVille" layoutX="628.68" layoutY="373.24" radius="7.4399999999999995" />
-        <Circle id="Kyiv" onMouseClicked="#choixRouteOuVille" layoutX="849.4" layoutY="271.56" radius="7.4399999999999995" />
-        <Circle id="Warszawa" onMouseClicked="#choixRouteOuVille" layoutX="690.06" layoutY="213.9" radius="7.4399999999999995" />
-        <Circle id="Wilno" onMouseClicked="#choixRouteOuVille" layoutX="807.24" layoutY="187.85999999999999" radius="7.4399999999999995" />
-        <Circle id="Smolensk" onMouseClicked="#choixRouteOuVille" layoutX="916.98" layoutY="192.2" radius="7.4399999999999995" />
-        <Circle id="Moskva" onMouseClicked="#choixRouteOuVille" layoutX="1007.5" layoutY="166.78" radius="7.4399999999999995" />
-        <Circle id="Kharkov" onMouseClicked="#choixRouteOuVille" layoutX="992.0" layoutY="327.36" radius="7.4399999999999995" />
-        <Circle id="Rostov" onMouseClicked="#choixRouteOuVille" layoutX="1036.02" layoutY="383.16" radius="7.4399999999999995" />
-        <Circle id="Sochi" onMouseClicked="#choixRouteOuVille" layoutX="1029.2" layoutY="477.4" radius="7.4399999999999995" />
-        <Circle id="Erzurum" onMouseClicked="#choixRouteOuVille" layoutX="1009.36" layoutY="611.32" radius="7.4399999999999995" />
-        <Circle id="Constantinople" onMouseClicked="#choixRouteOuVille" layoutX="841.96" layoutY="577.84" radius="7.4399999999999995" />
-        <Circle id="Angora" onMouseClicked="#choixRouteOuVille" layoutX="925.04" layoutY="636.12" radius="7.4399999999999995" />
-        <Circle id="Smyrna" onMouseClicked="#choixRouteOuVille" layoutX="794.84" layoutY="662.16" radius="7.4399999999999995" />
-        <Circle id="Essen" onMouseClicked="#choixRouteOuVille" layoutX="411.06" layoutY="207.7" radius="7.4399999999999995" />
-        <Circle id="Berlin" onMouseClicked="#choixRouteOuVille" layoutX="517.08" layoutY="222.58" radius="7.4399999999999995" />
-        <Circle id="Kobenhavn" onMouseClicked="#choixRouteOuVille" layoutX="486.08" layoutY="96.1" radius="7.4399999999999995" />
-        <Circle id="Stockholm" onMouseClicked="#choixRouteOuVille" layoutX="597.06" layoutY="13.64" radius="7.4399999999999995" />
-        <Circle id="Riga" onMouseClicked="#choixRouteOuVille" layoutX="724.78" layoutY="44.02" radius="7.4399999999999995" />
-        <Circle id="Petrograd" onMouseClicked="#choixRouteOuVille" layoutX="903.96" layoutY="39.68" radius="7.4399999999999995" />
-        <Circle id="Danzig" onMouseClicked="#choixRouteOuVille" layoutX="637.36" layoutY="140.12" radius="7.4399999999999995" />
-        <Circle id="Bucuresti" onMouseClicked="#choixRouteOuVille" layoutX="788.02" layoutY="447.02" radius="7.4399999999999995" />
-        <Circle id="Sevastopol" onMouseClicked="#choixRouteOuVille" layoutX="934.96" layoutY="462.52" radius="7.4399999999999995" />
+    <Group fx:id="villes">
+        <Circle id="Cadiz" layoutX="112.32000000000001" layoutY="836.1600000000001" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Madrid" layoutX="114.66000000000001" layoutY="737.88" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Barcelona" layoutX="262.08" layoutY="749.58" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Lisboa" layoutX="24.96" layoutY="765.1800000000001" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Pamplona" layoutX="248.04000000000002" layoutY="627.9" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Paris" layoutX="331.5" layoutY="424.32" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Dieppe" layoutX="265.98" layoutY="364.26" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Brest" layoutX="146.64000000000001" layoutY="402.48" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="London" layoutX="279.24" layoutY="244.14000000000001" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Amsterdam" layoutX="408.72" layoutY="248.82000000000002" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Bruxelles" layoutX="378.3" layoutY="311.22" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Edinburgh" layoutX="191.1" layoutY="43.68" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Zurich" layoutX="485.16" layoutY="497.64000000000004" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Marseille" layoutX="448.5" layoutY="621.66" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Frankfurt" layoutX="497.64000000000004" layoutY="354.12" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Munchen" layoutX="574.86" layoutY="413.40000000000003" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Wien" layoutX="725.4" layoutY="436.02000000000004" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Venezia" layoutX="595.14" layoutY="541.32" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Roma" layoutX="607.62" layoutY="662.22" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Brindisi" layoutX="721.5" layoutY="695.76" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Palermo" layoutX="655.98" layoutY="836.1600000000001" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Athina" layoutX="886.08" layoutY="798.72" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Sofia" layoutX="910.26" layoutY="647.4" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Sarajevo" layoutX="821.34" layoutY="635.7" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Zagrab" layoutX="708.24" layoutY="556.9200000000001" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Budapest" layoutX="790.9200000000001" layoutY="469.56" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Kyiv" layoutX="1068.6000000000001" layoutY="341.64" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Warszawa" layoutX="868.14" layoutY="269.1" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Wilno" layoutX="1015.5600000000001" layoutY="236.34" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Smolensk" layoutX="1153.6200000000001" layoutY="241.8" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Moskva" layoutX="1267.5" layoutY="209.82" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Kharkov" layoutX="1248.0" layoutY="411.84000000000003" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Rostov" layoutX="1303.38" layoutY="482.04" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Sochi" layoutX="1294.8" layoutY="600.6" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Erzurum" layoutX="1269.8400000000001" layoutY="769.08" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Constantinople" layoutX="1059.24" layoutY="726.96" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Angora" layoutX="1163.76" layoutY="800.28" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Smyrna" layoutX="999.96" layoutY="833.0400000000001" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Essen" layoutX="517.14" layoutY="261.3" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Berlin" layoutX="650.52" layoutY="280.02" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Kobenhavn" layoutX="611.52" layoutY="120.9" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Stockholm" layoutX="751.14" layoutY="17.16" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Riga" layoutX="911.82" layoutY="55.38" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Petrograd" layoutX="1137.24" layoutY="49.92" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Danzig" layoutX="801.84" layoutY="176.28" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Bucuresti" layoutX="991.38" layoutY="562.38" onMouseClicked="#choixRouteOuVille" radius="9.36" />
+        <Circle id="Sevastopol" layoutX="1176.24" layoutY="581.88" onMouseClicked="#choixRouteOuVille" radius="9.36" />
     </Group>
 </fx:root>

@@ -2,6 +2,7 @@ package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.rails.Destination;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -11,10 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 
 import java.io.IOException;
 
@@ -39,14 +37,14 @@ public class VueDuJeu extends BorderPane {
     @FXML
     private Label information;
     @FXML
-    private Pane plateauPane;
-
-
+    private AnchorPane plateauPane;
 
     private StringProperty infoProperty;
+
+
     public VueDuJeu(IJeu jeu) {
-        setPrefWidth(1600);
-        setPrefHeight(1600);
+      //  setPrefWidth(1600);
+      //  setPrefHeight(1600);
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau();
@@ -61,7 +59,7 @@ public class VueDuJeu extends BorderPane {
             e.printStackTrace();
         }
 
-        //plateauPane.getChildren().add(plateau);
+        plateauPane.getChildren().add(plateau);
 
     }
 
@@ -73,7 +71,7 @@ public class VueDuJeu extends BorderPane {
         infoProperty = new SimpleStringProperty();
         setListener();
         information.textProperty().bind(infoProperty);
-//        plateau.creerBindings();
+        Platform.runLater(()->plateau.creerBindings());
     }
 
     public void setListener(){
