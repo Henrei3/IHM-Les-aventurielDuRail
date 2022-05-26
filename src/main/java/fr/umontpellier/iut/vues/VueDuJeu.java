@@ -1,11 +1,20 @@
 package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.IJeu;
+import fr.umontpellier.iut.rails.Destination;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
@@ -18,20 +27,29 @@ import java.io.IOException;
  * (le joueur courant, les 5 cartes Wagons visibles, les destinations lors de l'étape d'initialisation de la partie, ...)
  * ainsi que les listeners à exécuter lorsque ces éléments changent
  */
-public class VueDuJeu extends HBox {
+public class VueDuJeu extends BorderPane {
 
     private IJeu jeu;
     private VuePlateau plateau;
     private VueJoueurCourant vueJoueurCourant;
 
+
     @FXML
     private Button bt;
+    @FXML
+    private Label information;
+    @FXML
+    private Pane plateauPane;
 
+
+
+    private StringProperty infoProperty;
     public VueDuJeu(IJeu jeu) {
+        setPrefWidth(1600);
+        setPrefHeight(1600);
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau();
-
 
 
         try {
@@ -43,6 +61,8 @@ public class VueDuJeu extends HBox {
             e.printStackTrace();
         }
 
+        //plateauPane.getChildren().add(plateau);
+
     }
 
     public IJeu getJeu() {
@@ -50,12 +70,35 @@ public class VueDuJeu extends HBox {
     }
 
     public void creerBindings() {
+        infoProperty = new SimpleStringProperty();
+        setListener();
+        information.textProperty().bind(infoProperty);
 //        plateau.creerBindings();
     }
 
+    public void setListener(){
+        jeu.instructionProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                infoProperty.set(t1);
+            }
+        });
+
+        jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
+            @Override
+            public void onChanged(Change<? extends Destination> change) {
+                while(change.next()){
+                    //System.out.println(change.getList().get(0).getNom());
+                }
+
+            }
+        });
+
+    }
+
     @FXML
-    public void btOnAction(){
-        System.out.println("TEST FONCTIONNE");
+    public void btaction(){
+        jeu.passerAEteChoisi();
     }
 
 }
