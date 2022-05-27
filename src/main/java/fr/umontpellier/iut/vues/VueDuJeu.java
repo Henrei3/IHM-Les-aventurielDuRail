@@ -1,6 +1,7 @@
 package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.IJeu;
+import fr.umontpellier.iut.IJoueur;
 import fr.umontpellier.iut.rails.Destination;
 import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
@@ -12,11 +13,16 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.Flow;
 
 /**
  * Cette classe correspond à la fenêtre principale de l'application.
@@ -27,11 +33,13 @@ import java.io.IOException;
  * (le joueur courant, les 5 cartes Wagons visibles, les destinations lors de l'étape d'initialisation de la partie, ...)
  * ainsi que les listeners à exécuter lorsque ces éléments changent
  */
-public class VueDuJeu extends BorderPane {
+public class VueDuJeu extends AnchorPane{
 
     private IJeu jeu;
     private VuePlateau plateau;
     private VueJoueurCourant vueJoueurCourant;
+
+
 
 
     @FXML
@@ -39,10 +47,34 @@ public class VueDuJeu extends BorderPane {
     @FXML
     private Label information;
     @FXML
-    private AnchorPane plateauPane;
+    private Pane plateauPane;
     private StringProperty infoProperty;
-    private DoubleProperty plateauX;
-    private DoubleProperty plateauY;
+    @FXML
+    private Label n1;
+    @FXML
+    private Label n2;
+    @FXML
+    private Label n3;
+    @FXML
+    private Label n4;
+    @FXML
+    private Label sc1;
+    @FXML
+    private Label sc2;
+    @FXML
+    private Label sc3;
+    @FXML
+    private Label sc4;
+    @FXML
+    private Pane p1;
+    @FXML
+    private Pane p2;
+    @FXML
+    private Pane p3;
+    @FXML
+    private Pane p4;
+
+
 
 
     public VueDuJeu(IJeu jeu) {
@@ -61,7 +93,8 @@ public class VueDuJeu extends BorderPane {
             e.printStackTrace();
         }
 
-        plateauPane.getChildren().add(plateau);
+        plateauPane.getChildren().add(plateau) ;
+
 
     }
 
@@ -69,16 +102,26 @@ public class VueDuJeu extends BorderPane {
         return jeu;
     }
 
-    public void creerBindings() {
-        infoProperty = new SimpleStringProperty();
-
-        setListener();
-        information.textProperty().bind(infoProperty);
-        Platform.runLater(()->plateau.creerBindings());
-
+    public void initJoueurs(){
+        n1.setText(jeu.getJoueurs().get(0).getNom());
+        n2.setText(jeu.getJoueurs().get(1).getNom());
+        n3.setText(jeu.getJoueurs().get(2).getNom());
+        n4.setText(jeu.getJoueurs().get(3).getNom());
+        sc1.setText("Score :" +jeu.getJoueurs().get(0).getScore());
+        sc2.setText("Score :" +jeu.getJoueurs().get(1).getScore());
+        sc3.setText("Score :" +jeu.getJoueurs().get(2).getScore());
+        sc4.setText("Score :" +jeu.getJoueurs().get(3).getScore());
     }
 
-    public void setListener(){
+    public void creerBindings() {
+        initJoueurs();
+        infoProperty = new SimpleStringProperty();
+        information.textProperty().bind(infoProperty);
+        Platform.runLater(()->plateau.creerBindings(this));
+        setListener();
+    }
+
+    public void setListener() {
         jeu.instructionProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
@@ -86,21 +129,89 @@ public class VueDuJeu extends BorderPane {
             }
         });
 
-        jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
+        jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
             @Override
-            public void onChanged(Change<? extends Destination> change) {
-                while(change.next()){
-                    //System.out.println(change.getList().get(0).getNom());
+            public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
+                if(t1.getNom()==jeu.getJoueurs().get(0).getNom()){
+                    p1.setBorder(new Border(new BorderStroke(Color.RED,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p2.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p3.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p4.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 }
+                if(t1.getNom()==jeu.getJoueurs().get(1).getNom()){
+                    p2.setBorder(new Border(new BorderStroke(Color.RED,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p1.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p3.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p4.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                }
+                if(t1.getNom()==jeu.getJoueurs().get(2).getNom()){
+                    p2.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p4.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p1.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p3.setBorder(new Border(new BorderStroke(Color.RED,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                }
+                if(t1.getNom()==jeu.getJoueurs().get(3).getNom()){
+                    p4.setBorder(new Border(new BorderStroke(Color.RED,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p3.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p2.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    p1.setBorder(new Border(new BorderStroke(Color.BLACK,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                }
+            }
+        });
+
+        jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sc1.setText("Score : " +t1.intValue());
+            }
+        });
+        jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sc2.setText("Score : " +t1.intValue());
+            }
+        });
+        jeu.getJoueurs().get(2).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sc3.setText("Score : " +t1.intValue());
+            }
+        });
+        jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sc4.setText("Score : " +t1.intValue());
             }
         });
 
 
     }
 
+
+
     @FXML
     public void btaction(){
         jeu.passerAEteChoisi();
+    }
+
+    public Pane getPlateauPane(){
+        return plateauPane;
     }
 
 }

@@ -1,5 +1,6 @@
 package fr.umontpellier.iut.vues;
 
+import javafx.beans.binding.Binding;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.DoubleBinding;
 import javafx.beans.property.DoubleProperty;
@@ -8,15 +9,17 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.ListResourceBundle;
 
 /**
  * Cette classe présente les routes et les villes sur le plateau.
@@ -49,19 +52,43 @@ public class VuePlateau extends Pane {
     @FXML
     private Group routes;
 
-    public void creerBindings() {
-        bindRedimensionPlateau();
+    public void creerBindings(VueDuJeu jeu) {
+        bindRedimensionPlateau(jeu);
     }
 
-    private void bindRedimensionPlateau() {
+    private void bindRedimensionPlateau(VueDuJeu jeu) {
         bindRoutes();
         bindVilles();
 
 //        Les dimensions de l'image varient avec celle de la scène
-        image.fitWidthProperty().bind(getScene().widthProperty());
-        image.fitHeightProperty().bind(getScene().heightProperty());
+        image.fitWidthProperty().bind(jeu.getPlateauPane().prefWidthProperty());
+        image.fitHeightProperty().bind(jeu.getPlateauPane().prefHeightProperty());
 
+        jeu.getPlateauPane().widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                image.fitWidthProperty().bind(new DoubleBinding() {
+                    { super.bind(image.fitWidthProperty(), image.fitHeightProperty());}
+                    @Override
+                    protected double computeValue() {
+                        return t1.doubleValue();
+                    }
+                });
+            }
+        });
 
+        jeu.getPlateauPane().heightProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                image.fitHeightProperty().bind(new DoubleBinding() {
+                    { super.bind(image.fitWidthProperty(), image.fitHeightProperty());}
+                    @Override
+                    protected double computeValue() {
+                       return  t1.doubleValue();
+                    }
+                });
+            }
+        });
     }
 
     private void bindRectangle(Rectangle rect, double layoutX, double layoutY) {
