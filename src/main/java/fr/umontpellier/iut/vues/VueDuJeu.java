@@ -44,8 +44,6 @@ public class VueDuJeu extends AnchorPane{
     private VueJoueurCourant vueJoueurCourant;
 
 
-
-
     @FXML
     private Button bt;
     @FXML
@@ -84,7 +82,7 @@ public class VueDuJeu extends AnchorPane{
 
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
-        plateau = new VuePlateau();
+        plateau = new VuePlateau(jeu);
 
 
 
@@ -204,9 +202,6 @@ public class VueDuJeu extends AnchorPane{
                 sc4.setText("Score : " +t1.intValue());
             }
         });
-
-
-
 
         jeu.cartesWagonVisiblesProperty().addListener(new ListChangeListener<CouleurWagon>() {
             @Override

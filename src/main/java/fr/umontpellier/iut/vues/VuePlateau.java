@@ -1,5 +1,7 @@
 package fr.umontpellier.iut.vues;
 
+import fr.umontpellier.iut.IJeu;
+import fr.umontpellier.iut.IRoute;
 import javafx.beans.binding.Binding;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.DoubleBinding;
@@ -7,17 +9,20 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
+import java.util.EventListener;
 import java.util.List;
 import java.util.ListResourceBundle;
 
@@ -28,8 +33,9 @@ import java.util.ListResourceBundle;
  * ainsi que les bindings qui mettront ?à jour le plateau après la prise d'une route ou d'une ville par un joueur
  */
 public class VuePlateau extends Pane {
+    private IJeu jeu;
 
-    public VuePlateau() {
+    public VuePlateau(IJeu jeu) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/plateau.fxml"));
             loader.setRoot(this);
@@ -38,11 +44,13 @@ public class VuePlateau extends Pane {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.jeu = jeu;
     }
 
     @FXML
     public void choixRouteOuVille() {
-        System.out.println("el PPPPP");
+        System.out.println("elPP");
+        //jeu.uneVilleOuUneRouteAEteChoisie();
     }
 
     @FXML
