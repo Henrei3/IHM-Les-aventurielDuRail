@@ -79,6 +79,8 @@ public class VueDuJeu extends AnchorPane{
     private Pane p4;
     @FXML
     private VBox pioche;
+    @FXML
+    private HBox inventaire;
 
     public VueDuJeu(IJeu jeu) {
 
@@ -137,7 +139,7 @@ public class VueDuJeu extends AnchorPane{
         jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
             @Override
             public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
-                if(t1.getNom()==jeu.getJoueurs().get(0).getNom()){
+                if (t1.getNom() == jeu.getJoueurs().get(0).getNom()) {
                     p1.setBorder(new Border(new BorderStroke(Color.RED,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                     p2.setBorder(new Border(new BorderStroke(Color.BLACK,
@@ -147,7 +149,7 @@ public class VueDuJeu extends AnchorPane{
                     p4.setBorder(new Border(new BorderStroke(Color.BLACK,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 }
-                if(t1.getNom()==jeu.getJoueurs().get(1).getNom()){
+                if (t1.getNom() == jeu.getJoueurs().get(1).getNom()) {
                     p2.setBorder(new Border(new BorderStroke(Color.RED,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                     p1.setBorder(new Border(new BorderStroke(Color.BLACK,
@@ -157,7 +159,7 @@ public class VueDuJeu extends AnchorPane{
                     p4.setBorder(new Border(new BorderStroke(Color.BLACK,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 }
-                if(t1.getNom()==jeu.getJoueurs().get(2).getNom()){
+                if (t1.getNom() == jeu.getJoueurs().get(2).getNom()) {
                     p2.setBorder(new Border(new BorderStroke(Color.BLACK,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                     p4.setBorder(new Border(new BorderStroke(Color.BLACK,
@@ -167,7 +169,7 @@ public class VueDuJeu extends AnchorPane{
                     p3.setBorder(new Border(new BorderStroke(Color.RED,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 }
-                if(t1.getNom()==jeu.getJoueurs().get(3).getNom()){
+                if (t1.getNom() == jeu.getJoueurs().get(3).getNom()) {
                     p4.setBorder(new Border(new BorderStroke(Color.RED,
                             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                     p3.setBorder(new Border(new BorderStroke(Color.BLACK,
@@ -183,25 +185,25 @@ public class VueDuJeu extends AnchorPane{
         jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc1.setText("Score : " +t1.intValue());
+                sc1.setText("Score : " + t1.intValue());
             }
         });
         jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc2.setText("Score : " +t1.intValue());
+                sc2.setText("Score : " + t1.intValue());
             }
         });
         jeu.getJoueurs().get(2).scoreProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc3.setText("Score : " +t1.intValue());
+                sc3.setText("Score : " + t1.intValue());
             }
         });
         jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc4.setText("Score : " +t1.intValue());
+                sc4.setText("Score : " + t1.intValue());
             }
         });
 
@@ -209,13 +211,13 @@ public class VueDuJeu extends AnchorPane{
             @Override
             public void onChanged(Change<? extends CouleurWagon> change) {
 
-                while(change.next()){
+                while (change.next()) {
 
-                    if(change.wasAdded()){
-                        Platform.runLater(()->pioche.getChildren().add( new VueCarteWagon(change.getList().get(change.getFrom()),jeu,pioche)));
+                    if (change.wasAdded()) {
+                        Platform.runLater(() -> pioche.getChildren().add(new VueCarteWagon(change.getList().get(change.getFrom()), jeu, pioche)));
                     }
-                    if(change.wasRemoved()){
-
+                    if (change.wasRemoved()) {
+                        //supprimer les cartes plûtot ici
                     }
 
                 }
@@ -234,7 +236,14 @@ public class VueDuJeu extends AnchorPane{
             }
         });*/
 
+     /*   jeu.joueurCourantProperty().getValue().cartesWagonProperty().addListener(new ListChangeListener<CouleurWagon>() {
+            @Override
+            public void onChanged(Change<? extends CouleurWagon> change) {
+                while(change.next()){
 
+                }
+            }
+        });*/
     }
 
 
