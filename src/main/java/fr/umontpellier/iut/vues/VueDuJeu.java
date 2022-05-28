@@ -2,6 +2,7 @@ package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.IJoueur;
+import fr.umontpellier.iut.rails.CouleurWagon;
 import fr.umontpellier.iut.rails.Destination;
 import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
@@ -11,12 +12,15 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
@@ -73,15 +77,15 @@ public class VueDuJeu extends AnchorPane{
     private Pane p3;
     @FXML
     private Pane p4;
-
-
-
+    @FXML
+    private VBox pioche;
 
     public VueDuJeu(IJeu jeu) {
 
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau();
+
 
 
         try {
@@ -94,6 +98,7 @@ public class VueDuJeu extends AnchorPane{
         }
 
         plateauPane.getChildren().add(plateau) ;
+
 
 
     }
@@ -201,8 +206,25 @@ public class VueDuJeu extends AnchorPane{
         });
 
 
-    }
 
+
+        jeu.cartesWagonVisiblesProperty().addListener(new ListChangeListener<CouleurWagon>() {
+            @Override
+            public void onChanged(Change<? extends CouleurWagon> change) {
+
+                while(change.next()){
+
+                    if(change.wasAdded()){
+                        Platform.runLater(()->pioche.getChildren().add( new VueCarteWagon(change.getList().get(change.getFrom()),jeu,pioche)));
+                    }
+                    if(change.wasRemoved()){
+
+                    }
+
+                }
+            }
+        });
+    }
 
 
     @FXML

@@ -29,8 +29,6 @@ public class VueJoueurCourant extends VBox {
     public VueJoueurCourant() {
         this.nomJoueur = new Label();
         carteWagonsJC = new VBox();
-        carteWagonsJC.getChildren().add(new VueCarteWagon(CouleurWagon.GRIS));
-        this.getChildren().addAll(this.nomJoueur, carteWagonsJC);
 
     }
 
