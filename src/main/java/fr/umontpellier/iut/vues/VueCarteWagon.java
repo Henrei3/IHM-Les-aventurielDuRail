@@ -9,6 +9,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -40,8 +41,8 @@ public class VueCarteWagon extends ImageView {
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                 jeu.uneCarteWagonAEteChoisie(couleurWagon);
-                 pioche.getChildren().remove(mouseEvent.getPickResult().getIntersectedNode());
+                Platform.runLater(()->jeu.uneCarteWagonAEteChoisie(couleurWagon));
+                Platform.runLater(()->pioche.getChildren().remove(mouseEvent.getPickResult().getIntersectedNode()));
             }
         });
     }

@@ -16,6 +16,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -26,6 +27,7 @@ import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.TreeSet;
 import java.util.concurrent.Flow;
 
 /**
@@ -219,6 +221,20 @@ public class VueDuJeu extends AnchorPane{
                 }
             }
         });
+
+    /*    jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
+            @Override
+            public void onChanged(Change<? extends Destination> change) {
+                while(change.next()){
+                    if(change.wasAdded()){
+                        System.out.println(change.getList().size());
+                        Platform.runLater(()->pioche.getChildren().add(new VueDestination(change.getList().get(change.getFrom()),jeu,pioche)));
+                    }
+                }
+            }
+        });*/
+
+
     }
 
 

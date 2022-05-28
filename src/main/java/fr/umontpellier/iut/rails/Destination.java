@@ -33,6 +33,8 @@ public class Destination implements IDestination {
         return String.format("%s - %s (%d)", ville1, ville2, valeur);
     }
 
+    //public String getNom2(){return String.format("%s - %s", ville1, ville2);}
+
     /**
      * @return une liste contenant toutes les destinations "normales" du jeu
      */
