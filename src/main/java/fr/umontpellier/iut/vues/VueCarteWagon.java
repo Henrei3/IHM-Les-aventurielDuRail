@@ -18,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Cette classe représente la vue d'une carte Wagon.
@@ -32,11 +33,11 @@ public class VueCarteWagon extends ImageView {
 
 
         this.couleurWagon = couleurWagon;
-
-        Image i = new Image("/images/cartesWagons/carte-wagon-"+couleurWagon.toString()+".png");
+        Image i = new Image("images/cartesWagons/carte-wagon-"+couleurWagon.toString().toUpperCase(Locale.ROOT)+".png");
         setImage(i);
-        this.setFitWidth(100);
-        this.setFitHeight(100);
+
+        this.setFitWidth(160);
+        this.setFitHeight(120);
 
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override

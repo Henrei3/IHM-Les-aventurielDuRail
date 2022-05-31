@@ -12,7 +12,6 @@ import java.util.Map;
  */
 public enum CouleurWagon implements ICouleurWagon {
     NOIR, BLANC, JAUNE, ROUGE, ORANGE, BLEU, VERT, ROSE, GRIS, LOCOMOTIVE;
-
     @Override
     public String toString() {
         return switch (this) {

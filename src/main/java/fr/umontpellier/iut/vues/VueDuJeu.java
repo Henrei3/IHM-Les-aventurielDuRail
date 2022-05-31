@@ -109,7 +109,12 @@ public class VueDuJeu extends AnchorPane{
         return jeu;
     }
 
+    public void initialize(){
+
+    }
+
     public void initJoueurs(){
+
         n1.setText(jeu.getJoueurs().get(0).getNom());
         n2.setText(jeu.getJoueurs().get(1).getNom());
         n3.setText(jeu.getJoueurs().get(2).getNom());
@@ -215,14 +220,20 @@ public class VueDuJeu extends AnchorPane{
 
                     if (change.wasAdded()) {
                         Platform.runLater(() -> pioche.getChildren().add(new VueCarteWagon(change.getList().get(change.getFrom()), jeu, pioche)));
-                    }
-                    if (change.wasRemoved()) {
-                        //supprimer les cartes plûtot ici
+
                     }
 
+                    if (change.wasRemoved()) {
+                        //supprimer les cartes plûtot ici
+                         //Platform.runLater(()-> carteSAMER());
+
+
+                    }
                 }
             }
         });
+
+
 
     /*    jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
             @Override
@@ -244,6 +255,18 @@ public class VueDuJeu extends AnchorPane{
                 }
             }
         });*/
+    }
+
+
+    public void carteSAMER() {
+        for (int i = 0; i < pioche.getChildren().size(); i++) {
+            pioche.getChildren().get(i).setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    pioche.getChildren().remove(mouseEvent.getPickResult().getIntersectedNode());
+                }
+            });
+        }
     }
 
 
