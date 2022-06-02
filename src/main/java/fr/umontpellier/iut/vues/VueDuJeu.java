@@ -1,5 +1,6 @@
 package fr.umontpellier.iut.vues;
 
+import fr.umontpellier.iut.ICouleurWagon;
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.IJoueur;
 import fr.umontpellier.iut.rails.CouleurWagon;
@@ -216,24 +217,23 @@ public class VueDuJeu extends AnchorPane{
         jeu.cartesWagonVisiblesProperty().addListener(new ListChangeListener<CouleurWagon>() {
             @Override
             public void onChanged(Change<? extends CouleurWagon> change) {
-
+                Platform.runLater(() ->  {
                 while (change.next()) {
 
                     if (change.wasAdded()) {
-                        Platform.runLater(() -> pioche.getChildren().add(new VueCarteWagon(change.getList().get(change.getFrom()), jeu, pioche)));
-
+                        pioche.getChildren().add(new VueCarteWagon(change.getList().get(change.getFrom()), jeu));
                     }
 
                     if (change.wasRemoved()) {
                         //supprimer les cartes plûtot ici
 
-
-
+                        for(ICouleurWagon w : change.getRemoved()){
+                            pioche.getChildren().remove(supprimerWagon(w));
+                        }
                     }
-                }
+                }});
             }
         });
-
 
 
         jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
@@ -262,7 +262,12 @@ public class VueDuJeu extends AnchorPane{
             }
         });*/
     }
-
+    public Node supprimerWagon(ICouleurWagon w){
+        for (Node r :pioche.getChildren()){
+            if(w.equals(((VueCarteWagon)r).getCouleurWagon())) return r;
+        }
+        return null;
+    }
     @FXML
     public void btaction(){
         jeu.passerAEteChoisi();

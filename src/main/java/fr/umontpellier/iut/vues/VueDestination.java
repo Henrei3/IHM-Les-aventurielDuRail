@@ -26,11 +26,11 @@ public class VueDestination extends ImageView {
 
     public VueDestination(IDestination destination, IJeu jeu, VBox pioche) {
         this.destination = destination;
-        this.setFitHeight(180);
+        this.setFitWidth(160);
         this.setFitHeight(100);
 //        this.setText(destination.toString());
        // System.out.println(destination.toImage().toLowerCase(Locale.ROOT));
-        Image i = new Image("images/destinations.png");
+        Image i = new Image("images/missions/eu-amsterdam-pamplona.png");
         this.setImage(i);
 
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {

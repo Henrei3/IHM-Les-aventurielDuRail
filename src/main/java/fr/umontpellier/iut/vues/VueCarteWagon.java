@@ -29,7 +29,7 @@ public class VueCarteWagon extends ImageView {
 
     private ICouleurWagon couleurWagon;
 
-    public VueCarteWagon(ICouleurWagon couleurWagon, IJeu jeu, VBox pioche) {
+    public VueCarteWagon(ICouleurWagon couleurWagon, IJeu jeu) {
 
 
         this.couleurWagon = couleurWagon;
@@ -42,8 +42,7 @@ public class VueCarteWagon extends ImageView {
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                Platform.runLater(()->jeu.uneCarteWagonAEteChoisie(couleurWagon));
-                Platform.runLater(()->pioche.getChildren().remove(mouseEvent.getPickResult().getIntersectedNode()));
+                jeu.uneCarteWagonAEteChoisie(couleurWagon);
             }
         });
     }
