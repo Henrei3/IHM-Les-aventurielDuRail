@@ -37,7 +37,7 @@ public class VueCarteWagon extends ImageView {
         setImage(i);
 
         this.setFitWidth(160);
-        this.setFitHeight(120);
+        this.setFitHeight(108);
 
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override

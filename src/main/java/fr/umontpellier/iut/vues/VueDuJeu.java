@@ -81,6 +81,8 @@ public class VueDuJeu extends AnchorPane{
     private VBox pioche;
     @FXML
     private HBox inventaire;
+    @FXML
+    private ImageView imgP1;
 
     public VueDuJeu(IJeu jeu) {
 
@@ -114,7 +116,6 @@ public class VueDuJeu extends AnchorPane{
     }
 
     public void initJoueurs(){
-
         n1.setText(jeu.getJoueurs().get(0).getNom());
         n2.setText(jeu.getJoueurs().get(1).getNom());
         n3.setText(jeu.getJoueurs().get(2).getNom());
