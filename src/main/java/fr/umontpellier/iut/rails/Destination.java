@@ -29,11 +29,13 @@ public class Destination implements IDestination {
         return getNom();
     }
 
+
+
     public String getNom() {
         return String.format("%s - %s (%d)", ville1, ville2, valeur);
     }
 
-    //public String getNom2(){return String.format("%s - %s", ville1, ville2);}
+    public String toImage(){return String.format("../../../../../../ressources/images/missions/eu-%s-%s.png", ville1, ville2);}
 
     /**
      * @return une liste contenant toutes les destinations "normales" du jeu

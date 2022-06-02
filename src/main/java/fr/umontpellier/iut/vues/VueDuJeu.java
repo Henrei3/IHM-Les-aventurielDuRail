@@ -226,7 +226,7 @@ public class VueDuJeu extends AnchorPane{
 
                     if (change.wasRemoved()) {
                         //supprimer les cartes plûtot ici
-                         //Platform.runLater(()-> carteSAMER());
+
 
 
                     }
@@ -236,7 +236,7 @@ public class VueDuJeu extends AnchorPane{
 
 
 
-    /*    jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
+        jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
             @Override
             public void onChanged(Change<? extends Destination> change) {
                 while(change.next()){
@@ -244,9 +244,14 @@ public class VueDuJeu extends AnchorPane{
                         System.out.println(change.getList().size());
                         Platform.runLater(()->pioche.getChildren().add(new VueDestination(change.getList().get(change.getFrom()),jeu,pioche)));
                     }
+                    if(change.wasRemoved()) {
+                        if (change.getList().size() <= 2) {
+                            Platform.runLater(() -> pioche.getChildren().clear());
+                        }
+                    }
                 }
             }
-        });*/
+        });
 
      /*   jeu.joueurCourantProperty().getValue().cartesWagonProperty().addListener(new ListChangeListener<CouleurWagon>() {
             @Override
@@ -257,19 +262,6 @@ public class VueDuJeu extends AnchorPane{
             }
         });*/
     }
-
-
-    public void carteSAMER() {
-        for (int i = 0; i < pioche.getChildren().size(); i++) {
-            pioche.getChildren().get(i).setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    pioche.getChildren().remove(mouseEvent.getPickResult().getIntersectedNode());
-                }
-            });
-        }
-    }
-
 
     @FXML
     public void btaction(){
