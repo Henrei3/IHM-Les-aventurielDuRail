@@ -30,7 +30,7 @@ public class VueDestination extends ImageView {
         this.setFitHeight(100);
 //        this.setText(destination.toString());
        // System.out.println(destination.toImage().toLowerCase(Locale.ROOT));
-        Image i = new Image("images/missions/eu-amsterdam-pamplona.png");
+        Image i = new Image("images/missions/"+destination.toImage().toLowerCase(Locale.ROOT));
         this.setImage(i);
 
         this.setOnMouseClicked(new EventHandler<MouseEvent>() {

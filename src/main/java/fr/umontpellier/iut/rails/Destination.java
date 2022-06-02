@@ -35,7 +35,7 @@ public class Destination implements IDestination {
         return String.format("%s - %s (%d)", ville1, ville2, valeur);
     }
 
-    public String toImage(){return String.format("../../../../../../ressources/images/missions/eu-%s-%s.png", ville1, ville2);}
+    public String toImage(){return String.format("eu-%s-%s.png", ville1, ville2);}
 
     /**
      * @return une liste contenant toutes les destinations "normales" du jeu
