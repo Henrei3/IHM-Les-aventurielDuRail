@@ -1,6 +1,7 @@
 package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.ICouleurWagon;
+import fr.umontpellier.iut.IDestination;
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.IJoueur;
 import fr.umontpellier.iut.rails.CouleurWagon;
@@ -103,7 +104,7 @@ public class VueDuJeu extends AnchorPane{
         }
 
         plateauPane.getChildren().add(plateau) ;
-
+        inventaire.getChildren().add(vueJoueurCourant);
 
 
     }
@@ -113,7 +114,7 @@ public class VueDuJeu extends AnchorPane{
     }
 
     public void initialize(){
-
+        setListener();
     }
 
     public void initJoueurs(){
@@ -132,8 +133,12 @@ public class VueDuJeu extends AnchorPane{
         infoProperty = new SimpleStringProperty();
         information.textProperty().bind(infoProperty);
         Platform.runLater(()->plateau.creerBindings(this));
-        setListener();
+        System.out.println(jeu.joueurCourantProperty().get().getNom());
+
     }
+
+
+
 
     public void setListener() {
         jeu.instructionProperty().addListener(new ChangeListener<String>() {
@@ -217,21 +222,20 @@ public class VueDuJeu extends AnchorPane{
         jeu.cartesWagonVisiblesProperty().addListener(new ListChangeListener<CouleurWagon>() {
             @Override
             public void onChanged(Change<? extends CouleurWagon> change) {
-                Platform.runLater(() ->  {
-                while (change.next()) {
+                Platform.runLater(() -> {
+                    while (change.next()) {
 
-                    if (change.wasAdded()) {
-                        pioche.getChildren().add(new VueCarteWagon(change.getList().get(change.getFrom()), jeu));
-                    }
+                        if (change.wasAdded()) {
+                            pioche.getChildren().add(new VueCarteWagon(change.getList().get(change.getFrom()), jeu));
+                        }
 
-                    if (change.wasRemoved()) {
-                        //supprimer les cartes plûtot ici
-
-                        for(ICouleurWagon w : change.getRemoved()){
-                            pioche.getChildren().remove(supprimerWagon(w));
+                        if (change.wasRemoved()) {
+                            for (ICouleurWagon w : change.getRemoved()) {
+                                pioche.getChildren().remove(supprimerWagon(w));
+                            }
                         }
                     }
-                }});
+                });
             }
         });
 
@@ -239,35 +243,38 @@ public class VueDuJeu extends AnchorPane{
         jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
             @Override
             public void onChanged(Change<? extends Destination> change) {
-                while(change.next()){
-                    if(change.wasAdded()){
-                        System.out.println(change.getList().size());
-                        Platform.runLater(()->pioche.getChildren().add(new VueDestination(change.getList().get(change.getFrom()),jeu,pioche)));
-                    }
-                    if(change.wasRemoved()) {
-                        if (change.getList().size() <= 2) {
-                            Platform.runLater(() -> pioche.getChildren().clear());
+                Platform.runLater(() -> {
+                    ;
+                    while (change.next()) {
+                        if (change.wasAdded()) {
+                            pioche.getChildren().add(new VueDestination(change.getList().get(change.getFrom()), jeu, pioche));
+                        }
+                        if (change.wasRemoved()) {
+                            for (IDestination d : change.getRemoved()) {
+                                pioche.getChildren().remove(supprimerDestination(d));
+                            }
                         }
                     }
-                }
+                });
             }
         });
-
-     /*   jeu.joueurCourantProperty().getValue().cartesWagonProperty().addListener(new ListChangeListener<CouleurWagon>() {
-            @Override
-            public void onChanged(Change<? extends CouleurWagon> change) {
-                while(change.next()){
-
-                }
-            }
-        });*/
     }
+
     public Node supprimerWagon(ICouleurWagon w){
         for (Node r :pioche.getChildren()){
             if(w.equals(((VueCarteWagon)r).getCouleurWagon())) return r;
         }
         return null;
     }
+
+    public Node supprimerDestination(IDestination d){
+        for (Node r :pioche.getChildren()){
+            if(d.equals(((VueDestination)r).getDestination())) return r;
+        }
+        return null;
+    }
+
+
     @FXML
     public void btaction(){
         jeu.passerAEteChoisi();

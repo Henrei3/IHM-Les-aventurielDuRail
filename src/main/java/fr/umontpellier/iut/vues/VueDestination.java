@@ -28,8 +28,8 @@ public class VueDestination extends ImageView {
         this.destination = destination;
         this.setFitWidth(160);
         this.setFitHeight(100);
-//        this.setText(destination.toString());
-       // System.out.println(destination.toImage().toLowerCase(Locale.ROOT));
+
+
         Image i = new Image("images/missions/"+destination.toImage().toLowerCase(Locale.ROOT));
         this.setImage(i);
 
@@ -37,7 +37,6 @@ public class VueDestination extends ImageView {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 jeu.uneDestinationAEteChoisie(destination.getNom());
-                pioche.getChildren().remove(mouseEvent.getPickResult().getIntersectedNode());
             }
            });
         }

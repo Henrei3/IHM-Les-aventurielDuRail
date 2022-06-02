@@ -13,6 +13,7 @@ import javafx.collections.ListChangeListener;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -21,26 +22,15 @@ import javafx.scene.layout.VBox;
  *
  * On y définit les bindings sur le joueur courant, ainsi que le listener à exécuter lorsque ce joueur change
  */
-public class VueJoueurCourant extends VBox {
-    private Label nomJoueur;
-    private StringProperty stringProperty;
-    private VBox carteWagonsJC;
-
+public class VueJoueurCourant extends HBox {
+    private IJoueur joueur;
     public VueJoueurCourant() {
-        this.nomJoueur = new Label();
-        carteWagonsJC = new VBox();
 
+        System.out.println();
     }
 
     public void creerBindings(IJeu jeu) {
-        stringProperty = new SimpleStringProperty();
-        jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
-            @Override
-            public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
-                Platform.runLater(() -> stringProperty.set("joueur courant :" + t1.getNom()));
-            }
-        });
-        nomJoueur.textProperty().bind(stringProperty);
+
     }
 
     public void setListener(IJeu jeu) {
