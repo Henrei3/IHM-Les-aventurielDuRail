@@ -3,6 +3,7 @@ package fr.umontpellier.iut;
 import fr.umontpellier.iut.rails.ServiceDuJeu;
 import fr.umontpellier.iut.vues.VueChoixJoueurs;
 import fr.umontpellier.iut.vues.VueDuJeu;
+import fr.umontpellier.iut.vues.VueJoueurCourant;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.ListChangeListener;

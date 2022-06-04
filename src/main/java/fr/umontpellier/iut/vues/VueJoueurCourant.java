@@ -10,6 +10,7 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,7 +27,6 @@ public class VueJoueurCourant extends HBox {
     private IJoueur joueur;
     public VueJoueurCourant() {
 
-        System.out.println();
     }
 
     public void creerBindings(IJeu jeu) {
@@ -34,7 +34,24 @@ public class VueJoueurCourant extends HBox {
     }
 
     public void setListener(IJeu jeu) {
+        jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
+            @Override
+            public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
+                Platform.runLater(()->{
+                    getChildren().clear();
+                    for(int i=0;i<t1.cartesWagonProperty().size();i++){
+                        getChildren().add(new VueCarteWagon(t1.getCartesWagon().get(i),jeu));
+                    }
 
+                    if(getChildren().size()>4) {
+                        for (Node r : getChildren()) {
+                            ((VueCarteWagon) r).setFitWidth(160 /(getChildren().size()*0.20));
+                            ((VueCarteWagon) r).setFitHeight(120);
+                        }
+                    }
+                });
+            }
+        });
     }
 }
 

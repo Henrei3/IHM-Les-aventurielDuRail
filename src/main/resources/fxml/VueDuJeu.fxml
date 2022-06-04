@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1222.0" style="-fx-background-color: #34377E;" stylesheets="@../css/style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">   <children>
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1222.0" style="-fx-background-color: #34377E;" stylesheets="@../css/style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">   <children>
       <Label fx:id="information" alignment="CENTER" layoutX="186.0" layoutY="7.0" prefHeight="93.0" prefWidth="813.0" style="-fx-background-color: BC0808;" text="Info" textFill="WHITE" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0">
          <font>
             <Font name="Arial" size="30.0" />
@@ -79,6 +79,6 @@
             <VBox fx:id="pioche" prefHeight="528.0" prefWidth="153.0" VBox.vgrow="NEVER" />
          </children>
       </VBox>
-      <HBox fx:id="inventaire" layoutX="186.0" layoutY="640.0" prefHeight="128.0" prefWidth="813.0" style="-fx-background-color: #2B0086; -fx-border-style: solid; -fx-border-width: 2.5;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" />
+      <HBox fx:id="inventaire" alignment="CENTER" layoutX="186.0" layoutY="640.0" prefHeight="128.0" prefWidth="813.0" style="-fx-background-color: #2B0086; -fx-border-style: solid; -fx-border-width: 2.5;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" />
    </children>
 </fx:root>

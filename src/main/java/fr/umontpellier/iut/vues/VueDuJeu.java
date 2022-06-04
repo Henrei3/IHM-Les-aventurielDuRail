@@ -133,7 +133,7 @@ public class VueDuJeu extends AnchorPane{
         infoProperty = new SimpleStringProperty();
         information.textProperty().bind(infoProperty);
         Platform.runLater(()->plateau.creerBindings(this));
-        System.out.println(jeu.joueurCourantProperty().get().getNom());
+
 
     }
 
@@ -258,6 +258,9 @@ public class VueDuJeu extends AnchorPane{
                 });
             }
         });
+
+        vueJoueurCourant.setListener(jeu);
+
     }
 
     public Node supprimerWagon(ICouleurWagon w){
