@@ -54,7 +54,9 @@ public class VueDuJeu extends AnchorPane{
     private Label information;
     @FXML
     private Pane plateauPane;
+
     private StringProperty infoProperty;
+
     @FXML
     private Label n1;
     @FXML
@@ -85,6 +87,8 @@ public class VueDuJeu extends AnchorPane{
     private HBox inventaire;
     @FXML
     private ImageView imgP1;
+    @FXML
+    private Button btP;
 
     public VueDuJeu(IJeu jeu) {
 
@@ -258,9 +262,7 @@ public class VueDuJeu extends AnchorPane{
                 });
             }
         });
-
         vueJoueurCourant.setListener(jeu);
-
     }
 
     public Node supprimerWagon(ICouleurWagon w){
@@ -287,9 +289,8 @@ public class VueDuJeu extends AnchorPane{
         return plateauPane;
     }
 
-
     @FXML
-    public void piocherCarte(){
+    public void btPiocher(){
         jeu.uneCarteWagonAEtePiochee();
     }
 

@@ -45,12 +45,13 @@ public class VuePlateau extends Pane {
             e.printStackTrace();
         }
         this.jeu = jeu;
+
     }
 
     @FXML
     public void choixRouteOuVille() {
-        System.out.println("elPP");
         //jeu.uneVilleOuUneRouteAEteChoisie();
+
     }
 
     @FXML
@@ -71,6 +72,9 @@ public class VuePlateau extends Pane {
 //        Les dimensions de l'image varient avec celle de la scène
         image.fitWidthProperty().bind(jeu.getPlateauPane().prefWidthProperty());
         image.fitHeightProperty().bind(jeu.getPlateauPane().prefHeightProperty());
+
+       // prefWidthProperty().bind(jeu.getPlateauPane().prefWidthProperty());
+       // prefHeightProperty().bind(jeu.getPlateauPane().prefHeightProperty());
 
         jeu.getPlateauPane().widthProperty().addListener(new ChangeListener<Number>() {
             @Override

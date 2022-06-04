@@ -18,10 +18,6 @@
             <Font name="Arial" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="bt" layoutX="1065.0" layoutY="681.0" mnemonicParsing="false" onAction="#btaction" prefHeight="49.0" prefWidth="92.0" style="-fx-background-color: BC0808;" text="Passer" textFill="WHITE" AnchorPane.bottomAnchor="43.0">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font></Button>
       <Pane fx:id="plateauPane" layoutX="186.0" layoutY="106.0" prefHeight="527.0" prefWidth="813.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="106.0">
          <padding>
             <Insets top="500.0" />
@@ -80,9 +76,14 @@
          </children>
       </VBox>
       <HBox fx:id="inventaire" layoutX="186.0" layoutY="642.0" prefHeight="126.0" prefWidth="813.0" style="-fx-background-color: #2B0086; -fx-border-style: solid; -fx-border-width: 2.5;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" />
-      <Button layoutX="45.0" layoutY="681.0" mnemonicParsing="false" onAction="#piocherCarte" prefHeight="49.0" prefWidth="99.0" style="-fx-background-color: green;" text="Piocher" textFill="WHITE" AnchorPane.bottomAnchor="43.0">
+      <Button fx:id="btP" layoutX="31.0" layoutY="668.0" mnemonicParsing="false" onAction="#btPiocher" prefHeight="75.0" prefWidth="127.0" style="-fx-background-color: green;" text="Piocher" textFill="WHITE" AnchorPane.bottomAnchor="30.0">
          <font>
             <Font name="Arial" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt" layoutX="1048.0" layoutY="668.0" mnemonicParsing="false" onAction="#btaction" prefHeight="75.0" prefWidth="127.0" style="-fx-background-color: BC0808;" text="Passer" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="47.0">
+         <font>
+            <Font name="Arial" size="17.0" />
          </font>
       </Button>
    </children>

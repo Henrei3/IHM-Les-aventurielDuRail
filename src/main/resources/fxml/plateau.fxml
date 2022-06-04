@@ -10,7 +10,7 @@
         <Image url="@../images/euMap.jpg"/>
     </ImageView>
     <Group fx:id="routes">
-        <Group id="Amsterdam - Bruxelles" onMouseClicked="#choixRouteOuVille">
+        <Group  id="Amsterdam - Bruxelles" onMouseClicked="#choixRouteOuVille">
             <Rectangle height="15.600000000000001" layoutX="393.51" layoutY="281.97" rotate="115.25316339457389" width="46.800000000000004" x="-23.400000000000002" y="-7.800000000000001" />
         </Group>
         <Group id="Amsterdam - Essen" onMouseClicked="#choixRouteOuVille">
