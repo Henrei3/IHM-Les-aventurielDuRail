@@ -287,4 +287,10 @@ public class VueDuJeu extends AnchorPane{
         return plateauPane;
     }
 
+
+    @FXML
+    public void piocherCarte(){
+        jeu.uneCarteWagonAEtePiochee();
+    }
+
 }
