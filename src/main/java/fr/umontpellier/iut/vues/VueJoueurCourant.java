@@ -24,7 +24,6 @@ import javafx.scene.layout.VBox;
  * On y définit les bindings sur le joueur courant, ainsi que le listener à exécuter lorsque ce joueur change
  */
 public class VueJoueurCourant extends HBox {
-    private IJoueur joueur;
     public VueJoueurCourant() {
 
     }
