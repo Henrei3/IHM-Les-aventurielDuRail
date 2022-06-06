@@ -18,10 +18,13 @@ import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
+import java.security.cert.Certificate;
 import java.util.EventListener;
 import java.util.List;
 import java.util.ListResourceBundle;
@@ -45,13 +48,23 @@ public class VuePlateau extends Pane {
             e.printStackTrace();
         }
         this.jeu = jeu;
-
     }
 
     @FXML
-    public void choixRouteOuVille() {
-        System.out.println();
-        //jeu.uneVilleOuUneRouteAEteChoisie();
+    public void choixRouteOuVille(MouseEvent eventHandler) {
+
+        if(eventHandler.getPickResult().getIntersectedNode().getId() != null){ //Villes
+            jeu.uneVilleOuUneRouteAEteChoisie(eventHandler.getPickResult().getIntersectedNode().getId());
+
+
+            //  Node r = eventHandler.getPickResult().getIntersectedNode();
+            //  ((Circle)r).setFill(Paint.valueOf("BLACK"));
+        }
+        else{ //Routes
+            jeu.uneVilleOuUneRouteAEteChoisie((eventHandler.getPickResult().getIntersectedNode().getParent().getId()));
+            Node r = eventHandler.getPickResult().getIntersectedNode().getParent();
+
+        }
 
     }
 
@@ -73,9 +86,6 @@ public class VuePlateau extends Pane {
 //        Les dimensions de l'image varient avec celle de la scène
         image.fitWidthProperty().bind(jeu.getPlateauPane().prefWidthProperty());
         image.fitHeightProperty().bind(jeu.getPlateauPane().prefHeightProperty());
-
-       // prefWidthProperty().bind(jeu.getPlateauPane().prefWidthProperty());
-       // prefHeightProperty().bind(jeu.getPlateauPane().prefHeightProperty());
 
         jeu.getPlateauPane().widthProperty().addListener(new ChangeListener<Number>() {
             @Override

@@ -90,13 +90,16 @@ public class VueDuJeu extends AnchorPane{
     @FXML
     private Button btP;
 
+    private StringProperty sP1;
+    private StringProperty sP2;
+    private StringProperty sP3;
+    private StringProperty sP4;
+
     public VueDuJeu(IJeu jeu) {
 
         this.jeu = jeu;
         vueJoueurCourant = new VueJoueurCourant();
         plateau = new VuePlateau(jeu);
-
-
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/VueDuJeu.fxml"));
@@ -109,8 +112,6 @@ public class VueDuJeu extends AnchorPane{
 
         plateauPane.getChildren().add(plateau) ;
         inventaire.getChildren().add(vueJoueurCourant);
-
-
     }
 
     public IJeu getJeu() {
@@ -122,36 +123,109 @@ public class VueDuJeu extends AnchorPane{
     }
 
     public void initJoueurs(){
+
+
         n1.setText(jeu.getJoueurs().get(0).getNom());
         n2.setText(jeu.getJoueurs().get(1).getNom());
         n3.setText(jeu.getJoueurs().get(2).getNom());
         n4.setText(jeu.getJoueurs().get(3).getNom());
-        sc1.setText("Score :" +jeu.getJoueurs().get(0).getScore());
-        sc2.setText("Score :" +jeu.getJoueurs().get(1).getScore());
-        sc3.setText("Score :" +jeu.getJoueurs().get(2).getScore());
-        sc4.setText("Score :" +jeu.getJoueurs().get(3).getScore());
+
     }
 
     public void creerBindings() {
         initJoueurs();
         infoProperty = new SimpleStringProperty();
         information.textProperty().bind(infoProperty);
+
+        sP1 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(0).getScore());
+        sP2 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(1).getScore());
+        sP3 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(2).getScore());
+        sP4 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(3).getScore());
+        sc1.textProperty().bindBidirectional(sP1);
+        sc2.textProperty().bindBidirectional(sP2);
+        sc3.textProperty().bindBidirectional(sP3);
+        sc4.textProperty().bindBidirectional(sP4);
+
         Platform.runLater(()->plateau.creerBindings(this));
-
-
     }
 
 
 
 
+
     public void setListener() {
+        setInstruction();
+        setCadreJoueurCourant();
+
+ //Score joueur a refaire
+        /*
+    Platform.runLater(()->{
+        jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sP1.setValue("Score : " + t1.intValue());
+            }
+        });
+    });
+
+
+        jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sP2.setValue("Score : " + t1.intValue());
+            }
+        });
+
+
+
+
+        jeu.getJoueurs().get(2).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sP3.setValue("Score : " + t1.intValue());
+            }
+        });
+
+
+
+        jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                sP4.setValue("Score : " + t1.intValue());
+            }
+        });
+*/
+
+        setCarteWagonVisible();
+        setDestination();
+        vueJoueurCourant.setListener(jeu);
+    }
+
+    public Node supprimerWagon(ICouleurWagon w){
+        for (Node r :pioche.getChildren()){
+            if(w.equals(((VueCarteWagon)r).getCouleurWagon())) return r;
+        }
+        return null;
+    }
+
+    public Node supprimerDestination(IDestination d){
+        for (Node r :pioche.getChildren()){
+            if(d.equals(((VueDestination)r).getDestination())) return r;
+        }
+        return null;
+    }
+
+
+    public void setInstruction(){
         jeu.instructionProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 infoProperty.set(t1);
             }
         });
+    }
 
+    public void setCadreJoueurCourant(){
         jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
             @Override
             public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
@@ -197,32 +271,29 @@ public class VueDuJeu extends AnchorPane{
                 }
             }
         });
+    }
 
-        jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
+    public void setDestination(){
+        jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
             @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc1.setText("Score : " + t1.intValue());
+            public void onChanged(Change<? extends Destination> change) {
+                Platform.runLater(() -> {
+                    while (change.next()) {
+                        if (change.wasAdded()) {
+                            pioche.getChildren().add(new VueDestination(change.getList().get(change.getFrom()), jeu, pioche));
+                        }
+                        if (change.wasRemoved()) {
+                            for (IDestination d : change.getRemoved()) {
+                                pioche.getChildren().remove(supprimerDestination(d));
+                            }
+                        }
+                    }
+                });
             }
         });
-        jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc2.setText("Score : " + t1.intValue());
-            }
-        });
-        jeu.getJoueurs().get(2).scoreProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc3.setText("Score : " + t1.intValue());
-            }
-        });
-        jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sc4.setText("Score : " + t1.intValue());
-            }
-        });
+    }
 
+    public void setCarteWagonVisible(){
         jeu.cartesWagonVisiblesProperty().addListener(new ListChangeListener<CouleurWagon>() {
             @Override
             public void onChanged(Change<? extends CouleurWagon> change) {
@@ -242,41 +313,6 @@ public class VueDuJeu extends AnchorPane{
                 });
             }
         });
-
-
-        jeu.destinationsInitialesProperty().addListener(new ListChangeListener<Destination>() {
-            @Override
-            public void onChanged(Change<? extends Destination> change) {
-                Platform.runLater(() -> {
-                    ;
-                    while (change.next()) {
-                        if (change.wasAdded()) {
-                            pioche.getChildren().add(new VueDestination(change.getList().get(change.getFrom()), jeu, pioche));
-                        }
-                        if (change.wasRemoved()) {
-                            for (IDestination d : change.getRemoved()) {
-                                pioche.getChildren().remove(supprimerDestination(d));
-                            }
-                        }
-                    }
-                });
-            }
-        });
-        vueJoueurCourant.setListener(jeu);
-    }
-
-    public Node supprimerWagon(ICouleurWagon w){
-        for (Node r :pioche.getChildren()){
-            if(w.equals(((VueCarteWagon)r).getCouleurWagon())) return r;
-        }
-        return null;
-    }
-
-    public Node supprimerDestination(IDestination d){
-        for (Node r :pioche.getChildren()){
-            if(d.equals(((VueDestination)r).getDestination())) return r;
-        }
-        return null;
     }
 
 
