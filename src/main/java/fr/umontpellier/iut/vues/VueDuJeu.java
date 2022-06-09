@@ -6,7 +6,9 @@ import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.IJoueur;
 import fr.umontpellier.iut.rails.CouleurWagon;
 import fr.umontpellier.iut.rails.Destination;
+import fr.umontpellier.iut.rails.Ville;
 import javafx.application.Platform;
+import javafx.beans.binding.DoubleBinding;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -83,10 +85,15 @@ public class VueDuJeu extends AnchorPane{
     @FXML
     private Button btP;
 
+    private DoubleProperty d;
+    private DoubleProperty test;
+
     private StringProperty sP1;
     private StringProperty sP2;
     private StringProperty sP3;
     private StringProperty sP4;
+
+
 
     public VueDuJeu(IJeu jeu) {
 
@@ -137,6 +144,8 @@ public class VueDuJeu extends AnchorPane{
         sc2.textProperty().bindBidirectional(sP2);
         sc3.textProperty().bindBidirectional(sP3);
         sc4.textProperty().bindBidirectional(sP4);
+        d = new SimpleDoubleProperty();
+        test = new SimpleDoubleProperty();
 
 
         Platform.runLater(()->plateau.creerBindings(this));
@@ -150,7 +159,7 @@ public class VueDuJeu extends AnchorPane{
         setInstruction();
         setCadreJoueurCourant();
 
- //Score joueur a refaire
+        //Score joueur a refaire
 /*
     Platform.runLater(()->{
         jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
@@ -192,6 +201,9 @@ public class VueDuJeu extends AnchorPane{
         setCarteWagonVisible();
         setDestination();
 
+
+
+
         jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
             @Override
             public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
@@ -200,28 +212,44 @@ public class VueDuJeu extends AnchorPane{
                     for(int i=0;i<t1.cartesWagonProperty().size();i++){
                         inventaire.getChildren().add(new VueCarteWagon(t1.getCartesWagon().get(i),jeu));
                     }
+                    for(Node n: inventaire.getChildren()){
+                        VueCarteWagon c = (VueCarteWagon) n;
+                        c.setFitHeight(120);
+                    }
+
+
+
                 });
             }
         });
 
-
-        inventaire.widthProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                if(!inventaire.getChildren().isEmpty()){
-                    d.setValue(t1.doubleValue()/inventaire.getChildren().size() -5);
-                }
-            }
-        });
-
-        inventaire.getChildren().addListener(new ListChangeListener<Node>() {
+        inventaire.getChildren().addListener(new ListChangeListener<Node>() { //bind pour l'ajout d'une carte
             @Override
             public void onChanged(Change<? extends Node> change) {
                 while(change.next()){
                     if(change.wasAdded()){
                         VueCarteWagon h = (((VueCarteWagon)change.getList().get(change.getFrom())));
                         h.fitWidthProperty().bind(d);
+                        if(test.getValue()!=0) {
+                            d.setValue(test.getValue() / inventaire.getChildren().size());
+                            System.out.println("d:" + d);
+                            System.out.println("test :" + test);
+                        }
+                        else{
+                            d.setValue(inventaire.getPrefWidth()/inventaire.getChildren().size() -2);
+                        }
                     }
+                }
+            }
+        });
+
+        inventaire.widthProperty().addListener(new ChangeListener<Number>() { //bind pour le resize fenêtre
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                if(!inventaire.getChildren().isEmpty()){
+                    test.setValue(t1);
+                    d.setValue(t1.doubleValue()/inventaire.getChildren().size()-1);
+                    System.out.println("d change : " +d);
                 }
             }
         });
