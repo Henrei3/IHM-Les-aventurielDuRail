@@ -14,23 +14,16 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.TreeSet;
-import java.util.concurrent.Flow;
 
 /**
  * Cette classe correspond à la fenêtre principale de l'application.
@@ -98,7 +91,7 @@ public class VueDuJeu extends AnchorPane{
     public VueDuJeu(IJeu jeu) {
 
         this.jeu = jeu;
-        vueJoueurCourant = new VueJoueurCourant();
+        //vueJoueurCourant = new VueJoueurCourant(jeu,this.prefHeightProperty(),prefHeightProperty());
         plateau = new VuePlateau(jeu);
 
         try {
@@ -111,7 +104,7 @@ public class VueDuJeu extends AnchorPane{
         }
 
         plateauPane.getChildren().add(plateau) ;
-        inventaire.getChildren().add(vueJoueurCourant);
+        //inventaire.getChildren().add(vueJoueurCourant);
     }
 
     public IJeu getJeu() {
@@ -123,7 +116,6 @@ public class VueDuJeu extends AnchorPane{
     }
 
     public void initJoueurs(){
-
 
         n1.setText(jeu.getJoueurs().get(0).getNom());
         n2.setText(jeu.getJoueurs().get(1).getNom());
@@ -146,6 +138,7 @@ public class VueDuJeu extends AnchorPane{
         sc3.textProperty().bindBidirectional(sP3);
         sc4.textProperty().bindBidirectional(sP4);
 
+
         Platform.runLater(()->plateau.creerBindings(this));
     }
 
@@ -158,7 +151,7 @@ public class VueDuJeu extends AnchorPane{
         setCadreJoueurCourant();
 
  //Score joueur a refaire
-        /*
+/*
     Platform.runLater(()->{
         jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -185,7 +178,7 @@ public class VueDuJeu extends AnchorPane{
                 sP3.setValue("Score : " + t1.intValue());
             }
         });
-
+*/
 
 
         jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
@@ -194,21 +187,61 @@ public class VueDuJeu extends AnchorPane{
                 sP4.setValue("Score : " + t1.intValue());
             }
         });
-*/
+
 
         setCarteWagonVisible();
         setDestination();
-        vueJoueurCourant.setListener(jeu);
+
+        jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
+            @Override
+            public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
+                Platform.runLater(()->{
+                    inventaire.getChildren().clear();
+                    for(int i=0;i<t1.cartesWagonProperty().size();i++){
+                        inventaire.getChildren().add(new VueCarteWagon(t1.getCartesWagon().get(i),jeu));
+                    }
+                });
+            }
+        });
+
+
+        inventaire.widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                if(!inventaire.getChildren().isEmpty()){
+                    d.setValue(t1.doubleValue()/inventaire.getChildren().size() -5);
+                }
+            }
+        });
+
+        inventaire.getChildren().addListener(new ListChangeListener<Node>() {
+            @Override
+            public void onChanged(Change<? extends Node> change) {
+                while(change.next()){
+                    if(change.wasAdded()){
+                        VueCarteWagon h = (((VueCarteWagon)change.getList().get(change.getFrom())));
+                        h.fitWidthProperty().bind(d);
+                    }
+                }
+            }
+        });
+
+
+        //vueJoueurCourant.setListener(jeu);
+
+
+
+
     }
 
-    public Node supprimerWagon(ICouleurWagon w){
+    public Node trouverWagon(ICouleurWagon w){
         for (Node r :pioche.getChildren()){
             if(w.equals(((VueCarteWagon)r).getCouleurWagon())) return r;
         }
         return null;
     }
 
-    public Node supprimerDestination(IDestination d){
+    public Node trouverDestination(IDestination d){
         for (Node r :pioche.getChildren()){
             if(d.equals(((VueDestination)r).getDestination())) return r;
         }
@@ -284,7 +317,7 @@ public class VueDuJeu extends AnchorPane{
                         }
                         if (change.wasRemoved()) {
                             for (IDestination d : change.getRemoved()) {
-                                pioche.getChildren().remove(supprimerDestination(d));
+                                pioche.getChildren().remove(trouverDestination(d));
                             }
                         }
                     }
@@ -306,7 +339,7 @@ public class VueDuJeu extends AnchorPane{
 
                         if (change.wasRemoved()) {
                             for (ICouleurWagon w : change.getRemoved()) {
-                                pioche.getChildren().remove(supprimerWagon(w));
+                                pioche.getChildren().remove(trouverWagon(w));
                             }
                         }
                     }

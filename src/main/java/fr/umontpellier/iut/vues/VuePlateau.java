@@ -2,9 +2,14 @@ package fr.umontpellier.iut.vues;
 
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.IRoute;
+import fr.umontpellier.iut.IVille;
+import fr.umontpellier.iut.rails.Destination;
+import fr.umontpellier.iut.rails.Joueur;
+import fr.umontpellier.iut.rails.Ville;
 import javafx.beans.binding.Binding;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.DoubleBinding;
+import javafx.beans.binding.ObjectExpression;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.value.ChangeListener;
@@ -52,13 +57,11 @@ public class VuePlateau extends Pane {
 
     @FXML
     public void choixRouteOuVille(MouseEvent eventHandler) {
-
         if(eventHandler.getPickResult().getIntersectedNode().getId() != null){ //Villes
             jeu.uneVilleOuUneRouteAEteChoisie(eventHandler.getPickResult().getIntersectedNode().getId());
-
-
             //  Node r = eventHandler.getPickResult().getIntersectedNode();
             //  ((Circle)r).setFill(Paint.valueOf("BLACK"));
+
         }
         else{ //Routes
             jeu.uneVilleOuUneRouteAEteChoisie((eventHandler.getPickResult().getIntersectedNode().getParent().getId()));
@@ -77,6 +80,30 @@ public class VuePlateau extends Pane {
 
     public void creerBindings(VueDuJeu jeu) {
         bindRedimensionPlateau(jeu);
+        setListener();
+    }
+
+    public void setListener(){
+        for(int i=0; i < jeu.getVilles().size() ;i++) {
+            IVille v = (IVille) jeu.getVilles().get(i);
+            v.proprietaireProperty().addListener(new ChangeListener<Joueur>() {
+                @Override
+                public void changed(ObservableValue<? extends Joueur> observableValue, Joueur joueur, Joueur t1) {
+                    trouverVille(v).setFill(Paint.valueOf(t1.getCouleur().name()));
+                }
+            });
+        }
+
+
+    }
+
+    public Circle trouverVille(IVille v){
+        for (Node n : getChildren()){
+            if(v.equals(((IVille)n).getNom())) //peut pas cast en IVille
+
+                return (Circle) n;
+        }
+        return null;
     }
 
     private void bindRedimensionPlateau(VueDuJeu jeu) {
