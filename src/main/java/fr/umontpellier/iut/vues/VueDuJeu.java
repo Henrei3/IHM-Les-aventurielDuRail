@@ -256,7 +256,6 @@ public class VueDuJeu extends AnchorPane{
         jeu.getJoueurs().get(0).nbWagonsProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                System.out.println(t1);
                 Platform.runLater(()->gP1.setValue("Wagons : " + t1));
             }
         });
