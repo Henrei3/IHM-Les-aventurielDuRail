@@ -6,13 +6,8 @@ import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.IJoueur;
 import fr.umontpellier.iut.rails.CouleurWagon;
 import fr.umontpellier.iut.rails.Destination;
-import fr.umontpellier.iut.rails.Ville;
 import javafx.application.Platform;
-import javafx.beans.binding.DoubleBinding;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
@@ -86,7 +81,7 @@ public class VueDuJeu extends AnchorPane{
     private Button btP;
 
     private DoubleProperty d;
-    private DoubleProperty test;
+    private DoubleProperty inventaireWidth;
 
     private StringProperty sP1;
     private StringProperty sP2;
@@ -136,17 +131,16 @@ public class VueDuJeu extends AnchorPane{
         infoProperty = new SimpleStringProperty();
         information.textProperty().bind(infoProperty);
 
-        sP1 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(0).getScore());
-        sP2 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(1).getScore());
-        sP3 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(2).getScore());
-        sP4 = new SimpleStringProperty("Score :"+jeu.getJoueurs().get(3).getScore());
-        sc1.textProperty().bindBidirectional(sP1);
-        sc2.textProperty().bindBidirectional(sP2);
-        sc3.textProperty().bindBidirectional(sP3);
-        sc4.textProperty().bindBidirectional(sP4);
+        sP1 = new SimpleStringProperty("Score : " +  jeu.getJoueurs().get(0).getScore());
+        sP2 = new SimpleStringProperty("Score : " +jeu.getJoueurs().get(1).getScore());
+        sP3 = new SimpleStringProperty("Score : " +jeu.getJoueurs().get(2).getScore());
+        sP4 = new SimpleStringProperty("Score : " +jeu.getJoueurs().get(3).getScore());
+        sc1.textProperty().bind(sP1);
+        sc2.textProperty().bind(sP2);
+        sc3.textProperty().bind(sP3);
+        sc4.textProperty().bind(sP4);
         d = new SimpleDoubleProperty();
-        test = new SimpleDoubleProperty();
-
+        inventaireWidth = new SimpleDoubleProperty();
 
         Platform.runLater(()->plateau.creerBindings(this));
     }
@@ -158,48 +152,9 @@ public class VueDuJeu extends AnchorPane{
     public void setListener() {
         setInstruction();
         setCadreJoueurCourant();
-
-        //Score joueur a refaire
-/*
-    Platform.runLater(()->{
-        jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sP1.setValue("Score : " + t1.intValue());
-            }
-        });
-    });
-
-
-        jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sP2.setValue("Score : " + t1.intValue());
-            }
-        });
-
-
-
-
-        jeu.getJoueurs().get(2).scoreProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sP3.setValue("Score : " + t1.intValue());
-            }
-        });
-
-
-
-        jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                sP4.setValue("Score : " + t1.intValue());
-            }
-        });
-*/
-
         setCarteWagonVisible();
         setDestination();
+        setScore();
 
 
 
@@ -230,8 +185,8 @@ public class VueDuJeu extends AnchorPane{
                     if(change.wasAdded()){
                         VueCarteWagon h = (((VueCarteWagon)change.getList().get(change.getFrom())));
                         h.fitWidthProperty().bind(d);
-                        if(test.getValue()!=0) {
-                            d.setValue(test.getValue() / inventaire.getChildren().size());
+                        if(inventaireWidth.getValue()!=0) {
+                            d.setValue(inventaireWidth.getValue() / inventaire.getChildren().size());
                         }
                         else{
                             d.setValue(inventaire.getPrefWidth()/inventaire.getChildren().size() -2);
@@ -245,20 +200,12 @@ public class VueDuJeu extends AnchorPane{
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
                 if(!inventaire.getChildren().isEmpty()){
-                    test.setValue(t1);
+                    inventaireWidth.setValue(t1);
                     d.setValue(t1.doubleValue()/inventaire.getChildren().size()-1);
                 }
             }
         });
-
-
-        //vueJoueurCourant.setListener(jeu);
-
-
-
-
     }
-
     public Node trouverWagon(ICouleurWagon w){
         for (Node r :pioche.getChildren()){
             if(w.equals(((VueCarteWagon)r).getCouleurWagon())) return r;
@@ -273,6 +220,41 @@ public class VueDuJeu extends AnchorPane{
         return null;
     }
 
+
+    public void setScore(){
+        jeu.getJoueurs().get(0).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                Platform.runLater(()->sP1.setValue("Score : " + t1));
+            }
+        });
+
+        Platform.runLater(()->{
+            jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    Platform.runLater(()->sP2.setValue("Score : " + t1.intValue()));
+                }
+            });
+        });
+
+
+        jeu.getJoueurs().get(2).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                Platform.runLater(()->sP3.setValue("Score : " + t1));
+            }
+        });
+
+
+
+        jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                Platform.runLater(()->sP4.setValue("Score : " + t1.intValue()));
+            }
+        });
+    }
 
     public void setInstruction(){
         jeu.instructionProperty().addListener(new ChangeListener<String>() {
