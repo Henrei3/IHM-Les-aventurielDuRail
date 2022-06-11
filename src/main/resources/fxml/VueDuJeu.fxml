@@ -31,16 +31,18 @@
             </ImageView>
             <Label fx:id="sc1" layoutX="100.0" layoutY="50.0" prefHeight="27.0" prefWidth="92.0" text="Label" textFill="WHITE" />
             <Label fx:id="n1" layoutX="100.0" layoutY="25.0" prefHeight="27.0" prefWidth="69.0" text="Label" textFill="WHITE" />
+            <Label fx:id="gc1" layoutX="100.0" layoutY="77.0" prefHeight="27.0" prefWidth="92.0" text="Label" textFill="WHITE" />
          </children></Pane>
       <Pane fx:id="p2" layoutX="1025.0" layoutY="239.0" prefHeight="116.0" prefWidth="194.0" style="-fx-background-color: #1F3B9F; -fx-border-style: solid; -fx-border-width: 1.5;" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="239.0">
          <children>
-            <ImageView fx:id="iP2"  fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="iP2" fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../ressources/images/images/avatar-VERT.png" />
                </image>
             </ImageView>
-            <Label fx:id="sc2" layoutX="108.0" layoutY="45.0" prefHeight="27.0" prefWidth="92.0" text="Label" textFill="WHITE" />
-            <Label fx:id="n2" layoutX="108.0" layoutY="14.0" prefHeight="27.0" prefWidth="69.0" text="Label" textFill="WHITE" />
+            <Label fx:id="sc2" layoutX="97.0" layoutY="45.0" prefHeight="27.0" prefWidth="92.0" text="Label" textFill="WHITE" />
+            <Label fx:id="n2" layoutX="97.0" layoutY="14.0" prefHeight="27.0" prefWidth="69.0" text="Label" textFill="WHITE" />
+            <Label fx:id="gc2" layoutX="96.0" layoutY="72.0" prefHeight="27.0" prefWidth="86.0" text="Label" textFill="WHITE" />
          </children></Pane>
       <Pane fx:id="p3" layoutX="1025.0" layoutY="369.0" prefHeight="116.0" prefWidth="194.0" style="-fx-background-color: #1F3B9F; -fx-border-style: solid; -fx-border-width: 1.5;" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="369.0">
          <children>
@@ -49,8 +51,9 @@
                   <Image url="@../../../ressources/images/images/AVATAR-ROSE.png" />
                </image>
             </ImageView>
-            <Label fx:id="sc3" layoutX="102.0" layoutY="45.0" prefHeight="27.0" prefWidth="86.0" text="Label" textFill="WHITE" />
-            <Label fx:id="n3" layoutX="102.0" layoutY="14.0" prefHeight="27.0" prefWidth="69.0" text="Label" textFill="WHITE" />
+            <Label fx:id="sc3" layoutX="97.0" layoutY="45.0" prefHeight="27.0" prefWidth="86.0" text="Label" textFill="WHITE" />
+            <Label fx:id="n3" layoutX="97.0" layoutY="14.0" prefHeight="27.0" prefWidth="69.0" text="Label" textFill="WHITE" />
+            <Label fx:id="gc3" layoutX="96.0" layoutY="72.0" prefHeight="27.0" prefWidth="86.0" text="Label" textFill="WHITE" />
          </children></Pane>
       <Pane fx:id="p4" layoutX="1025.0" layoutY="494.0" prefHeight="116.0" prefWidth="194.0" style="-fx-background-color: #1F3B9F; -fx-border-style: solid; -fx-border-width: 1.5;" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="494.0">
          <children>
@@ -62,8 +65,9 @@
                   <Rectangle2D />
                </viewport>
             </ImageView>
-            <Label fx:id="sc4" layoutX="97.0" layoutY="50.0" prefHeight="27.0" prefWidth="92.0" text="Label" textFill="WHITE" />
+            <Label fx:id="sc4" layoutX="96.0" layoutY="45.0" prefHeight="27.0" prefWidth="92.0" text="Label" textFill="WHITE" />
             <Label fx:id="n4" layoutX="97.0" layoutY="14.0" prefHeight="27.0" prefWidth="69.0" text="Label" textFill="WHITE" />
+            <Label fx:id="gc4" layoutX="96.0" layoutY="73.0" prefHeight="27.0" prefWidth="86.0" text="Label" textFill="WHITE" />
          </children></Pane>
       <VBox layoutX="14.0" layoutY="30.0" prefHeight="603.0" prefWidth="161.0" style="-fx-background-color: #1F3B9F; -fx-border-style: solid; -fx-border-width: 3.5;" AnchorPane.bottomAnchor="140.0" AnchorPane.topAnchor="30.0">
          <children>

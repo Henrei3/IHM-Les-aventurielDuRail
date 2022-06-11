@@ -81,6 +81,16 @@ public class VueDuJeu extends AnchorPane{
     @FXML
     private Button btP;
 
+    @FXML
+    private Label gc1;
+    @FXML
+    private Label gc2;
+    @FXML
+    private Label gc3;
+    @FXML
+    private Label gc4;
+
+
     private DoubleProperty d;
     private DoubleProperty inventaireWidth;
 
@@ -88,6 +98,11 @@ public class VueDuJeu extends AnchorPane{
     private StringProperty sP2;
     private StringProperty sP3;
     private StringProperty sP4;
+
+    private StringProperty gP1;
+    private StringProperty gP2;
+    private StringProperty gP3;
+    private StringProperty gP4;
 
     @FXML
     private ImageView iP1;
@@ -102,7 +117,6 @@ public class VueDuJeu extends AnchorPane{
     public VueDuJeu(IJeu jeu) {
 
         this.jeu = jeu;
-        //vueJoueurCourant = new VueJoueurCourant(jeu,this.prefHeightProperty(),prefHeightProperty());
         plateau = new VuePlateau(jeu);
 
         try {
@@ -113,9 +127,7 @@ public class VueDuJeu extends AnchorPane{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         plateauPane.getChildren().add(plateau) ;
-        //inventaire.getChildren().add(vueJoueurCourant);
     }
 
     public IJeu getJeu() {
@@ -155,10 +167,23 @@ public class VueDuJeu extends AnchorPane{
         sP2 = new SimpleStringProperty("Score : " +jeu.getJoueurs().get(1).getScore());
         sP3 = new SimpleStringProperty("Score : " +jeu.getJoueurs().get(2).getScore());
         sP4 = new SimpleStringProperty("Score : " +jeu.getJoueurs().get(3).getScore());
+
         sc1.textProperty().bind(sP1);
         sc2.textProperty().bind(sP2);
         sc3.textProperty().bind(sP3);
         sc4.textProperty().bind(sP4);
+
+
+        gP1 = new SimpleStringProperty("Wagons : "+ jeu.getJoueurs().get(0).getNbGares());
+        gP2 = new SimpleStringProperty("Wagons : "+ jeu.getJoueurs().get(1).getNbGares());
+        gP3 = new SimpleStringProperty("Wagons : "+ jeu.getJoueurs().get(2).getNbGares());
+        gP4 = new SimpleStringProperty("Wagons : " + jeu.getJoueurs().get(3).getNbGares());
+
+        gc1.textProperty().bind(gP1);
+        gc2.textProperty().bind(gP2);
+        gc3.textProperty().bind(gP3);
+        gc4.textProperty().bind(gP4);
+
         d = new SimpleDoubleProperty();
         inventaireWidth = new SimpleDoubleProperty();
 
@@ -175,6 +200,7 @@ public class VueDuJeu extends AnchorPane{
         setCarteWagonVisible();
         setDestination();
         setScore();
+        setNbGare();
         setInventaireJoueur();
 
 
@@ -202,15 +228,12 @@ public class VueDuJeu extends AnchorPane{
             }
         });
 
-        Platform.runLater(()->{
-            jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
+        jeu.getJoueurs().get(1).scoreProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
                     Platform.runLater(()->sP2.setValue("Score : " + t1.intValue()));
                 }
-            });
         });
-
 
         jeu.getJoueurs().get(2).scoreProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -225,6 +248,41 @@ public class VueDuJeu extends AnchorPane{
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
                 Platform.runLater(()->sP4.setValue("Score : " + t1.intValue()));
+            }
+        });
+    }
+
+    public void setNbGare(){
+        jeu.getJoueurs().get(0).nbWagonsProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                System.out.println(t1);
+                Platform.runLater(()->gP1.setValue("Wagons : " + t1));
+            }
+        });
+
+
+            jeu.getJoueurs().get(1).nbWagonsProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                    Platform.runLater(()->gP2.setValue("Wagons : " + t1.intValue()));
+                }
+            });
+
+
+        jeu.getJoueurs().get(2).nbWagonsProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                Platform.runLater(()->gP3.setValue("Wagons : " + t1));
+            }
+        });
+
+
+
+        jeu.getJoueurs().get(3).nbWagonsProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                Platform.runLater(()->gP4.setValue("Wagons : " + t1.intValue()));
             }
         });
     }
