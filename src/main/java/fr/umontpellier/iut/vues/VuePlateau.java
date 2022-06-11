@@ -20,6 +20,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
+import java.io.PipedInputStream;
 import java.util.ArrayList;
 
 /**
@@ -86,7 +87,6 @@ public class VuePlateau extends Pane {
                             ((Circle) lV.get(x)).setFill(Paint.valueOf(toColor(t1.getCouleur().name())));
                         }
                     }
-
                 }
             });
         }
@@ -100,6 +100,7 @@ public class VuePlateau extends Pane {
                         if(lR.get(x).getParent().getId().equals(r.getNom())){
                             for(int z=0;z<lR.get(x).getParent().getChildrenUnmodifiable().size();z++) {
                                 ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setFill(Paint.valueOf(toColor(t1.getCouleur().name())));
+                                ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setStrokeWidth(2);
                             }
                         }
                     }
