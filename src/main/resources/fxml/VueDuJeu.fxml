@@ -75,7 +75,7 @@
             <VBox fx:id="pioche" prefHeight="528.0" prefWidth="153.0" VBox.vgrow="NEVER" />
          </children>
       </VBox>
-      <HBox fx:id="inventaire" layoutX="186.0" layoutY="642.0" prefHeight="126.0" prefWidth="813.0" style="-fx-background-color: #2B0086; -fx-border-style: solid; -fx-border-width: 2.5;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" />
+      <HBox fx:id="inventaire" layoutX="186.0" layoutY="643.0" prefHeight="104.0" prefWidth="813.0" style="-fx-background-color: #2B0086; -fx-border-style: solid; -fx-border-width: 2.5;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" />
       <Button fx:id="btP" layoutX="31.0" layoutY="668.0" mnemonicParsing="false" onAction="#btPiocher" prefHeight="75.0" prefWidth="127.0" style="-fx-background-color: green;" text="Piocher" textFill="WHITE" AnchorPane.bottomAnchor="30.0">
          <font>
             <Font name="Arial" size="18.0" />
@@ -86,5 +86,10 @@
             <Font name="Arial" size="17.0" />
          </font>
       </Button>
+      <Label alignment="CENTER" layoutX="486.0" layoutY="633.0" prefHeight="27.0" prefWidth="251.0" text="Inventaire " textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </fx:root>

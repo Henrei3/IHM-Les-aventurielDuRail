@@ -3,36 +3,23 @@ package fr.umontpellier.iut.vues;
 import fr.umontpellier.iut.IJeu;
 import fr.umontpellier.iut.IRoute;
 import fr.umontpellier.iut.IVille;
-import fr.umontpellier.iut.rails.Destination;
 import fr.umontpellier.iut.rails.Joueur;
-import fr.umontpellier.iut.rails.Ville;
-import javafx.beans.binding.Binding;
-import javafx.beans.binding.Bindings;
 import javafx.beans.binding.DoubleBinding;
-import javafx.beans.binding.ObjectExpression;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
-import java.security.cert.Certificate;
-import java.util.EventListener;
-import java.util.List;
-import java.util.ListResourceBundle;
+import java.util.ArrayList;
 
 /**
  * Cette classe présente les routes et les villes sur le plateau.
@@ -42,6 +29,8 @@ import java.util.ListResourceBundle;
  */
 public class VuePlateau extends Pane {
     private IJeu jeu;
+    private ArrayList<Node> lV;
+    private ArrayList<Node> lR;
 
     public VuePlateau(IJeu jeu) {
         try {
@@ -53,20 +42,22 @@ public class VuePlateau extends Pane {
             e.printStackTrace();
         }
         this.jeu = jeu;
+
+        lV = new ArrayList<>();
+        lR = new ArrayList<>();
     }
 
     @FXML
     public void choixRouteOuVille(MouseEvent eventHandler) {
         if(eventHandler.getPickResult().getIntersectedNode().getId() != null){ //Villes
             jeu.uneVilleOuUneRouteAEteChoisie(eventHandler.getPickResult().getIntersectedNode().getId());
-            //  Node r = eventHandler.getPickResult().getIntersectedNode();
-            //  ((Circle)r).setFill(Paint.valueOf("BLACK"));
-
+              Node r = eventHandler.getPickResult().getIntersectedNode();
+              lV.add(r);
         }
         else{ //Routes
             jeu.uneVilleOuUneRouteAEteChoisie((eventHandler.getPickResult().getIntersectedNode().getParent().getId()));
-            Node r = eventHandler.getPickResult().getIntersectedNode().getParent();
-
+            Node r = eventHandler.getPickResult().getIntersectedNode();
+            lR.add(r);
         }
 
     }
@@ -89,7 +80,29 @@ public class VuePlateau extends Pane {
             v.proprietaireProperty().addListener(new ChangeListener<Joueur>() {
                 @Override
                 public void changed(ObservableValue<? extends Joueur> observableValue, Joueur joueur, Joueur t1) {
-                    trouverVille(v).setFill(Paint.valueOf(t1.getCouleur().name()));
+                    for(int x = 0; x< lV.size(); x++) {
+                        System.out.println(t1.getCouleur().name());
+                        if (lV.get(x).getId().equals(v.getNom())) {
+                            ((Circle) lV.get(x)).setFill(Paint.valueOf("BLACK"));
+                        }
+                    }
+
+                }
+            });
+        }
+
+        for(int i=0;i<jeu.getRoutes().size();i++){
+            IRoute r = (IRoute) jeu.getRoutes().get(i);
+            r.proprietaireProperty().addListener(new ChangeListener<Joueur>() {
+                @Override
+                public void changed(ObservableValue<? extends Joueur> observableValue, Joueur joueur, Joueur t1) {
+                    for(int x=0;x<lR.size();x++){
+                        if(lR.get(x).getParent().getId().equals(r.getNom())){
+                            for(int z=0;z<lR.get(x).getParent().getChildrenUnmodifiable().size();z++) {
+                                ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setFill(Paint.valueOf("BLACK"));
+                            }
+                        }
+                    }
                 }
             });
         }
@@ -97,14 +110,6 @@ public class VuePlateau extends Pane {
 
     }
 
-    public Circle trouverVille(IVille v){
-        for (Node n : getChildren()){
-            if(v.equals(((IVille)n).getNom())) //peut pas cast en IVille
-
-                return (Circle) n;
-        }
-        return null;
-    }
 
     private void bindRedimensionPlateau(VueDuJeu jeu) {
         bindRoutes();
@@ -124,6 +129,7 @@ public class VuePlateau extends Pane {
                         return t1.doubleValue();
                     }
                 });
+
             }
         });
 

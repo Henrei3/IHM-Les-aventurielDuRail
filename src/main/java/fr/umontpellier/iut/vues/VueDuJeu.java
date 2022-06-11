@@ -187,7 +187,7 @@ public class VueDuJeu extends AnchorPane{
                 sP3.setValue("Score : " + t1.intValue());
             }
         });
-*/
+
 
 
         jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
@@ -196,7 +196,7 @@ public class VueDuJeu extends AnchorPane{
                 sP4.setValue("Score : " + t1.intValue());
             }
         });
-
+*/
 
         setCarteWagonVisible();
         setDestination();
@@ -214,7 +214,7 @@ public class VueDuJeu extends AnchorPane{
                     }
                     for(Node n: inventaire.getChildren()){
                         VueCarteWagon c = (VueCarteWagon) n;
-                        c.setFitHeight(120);
+                        c.setFitHeight(100);
                     }
 
 
@@ -232,8 +232,6 @@ public class VueDuJeu extends AnchorPane{
                         h.fitWidthProperty().bind(d);
                         if(test.getValue()!=0) {
                             d.setValue(test.getValue() / inventaire.getChildren().size());
-                            System.out.println("d:" + d);
-                            System.out.println("test :" + test);
                         }
                         else{
                             d.setValue(inventaire.getPrefWidth()/inventaire.getChildren().size() -2);
@@ -249,7 +247,6 @@ public class VueDuJeu extends AnchorPane{
                 if(!inventaire.getChildren().isEmpty()){
                     test.setValue(t1);
                     d.setValue(t1.doubleValue()/inventaire.getChildren().size()-1);
-                    System.out.println("d change : " +d);
                 }
             }
         });
