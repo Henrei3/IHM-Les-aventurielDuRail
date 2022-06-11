@@ -136,6 +136,7 @@ public class VuePlateau extends Pane {
         bindVilles();
 
 //        Les dimensions de l'image varient avec celle de la scène
+
         image.fitWidthProperty().bind(jeu.getPlateauPane().prefWidthProperty());
         image.fitHeightProperty().bind(jeu.getPlateauPane().prefHeightProperty());
 

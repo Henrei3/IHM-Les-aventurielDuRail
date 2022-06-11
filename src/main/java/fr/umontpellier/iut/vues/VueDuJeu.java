@@ -200,7 +200,7 @@ public class VueDuJeu extends AnchorPane{
         setCarteWagonVisible();
         setDestination();
         setScore();
-        setNbGare();
+        setNbWagons();
         setInventaireJoueur();
 
 
@@ -252,7 +252,7 @@ public class VueDuJeu extends AnchorPane{
         });
     }
 
-    public void setNbGare(){
+    public void setNbWagons(){
         jeu.getJoueurs().get(0).nbWagonsProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
