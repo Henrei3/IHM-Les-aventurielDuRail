@@ -24,7 +24,7 @@
          </padding></Pane>
       <Pane fx:id="p1" layoutX="1025.0" layoutY="110.0" prefHeight="116.0" prefWidth="194.0" style="-fx-border-style: solid; -fx-background-color: #1F3B9F; -fx-border-width: 1.5;" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="110.0">
          <children>
-            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="iP1" fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../ressources/images/images/avatar-ROUGE.png" />
                </image>
@@ -34,7 +34,7 @@
          </children></Pane>
       <Pane fx:id="p2" layoutX="1025.0" layoutY="239.0" prefHeight="116.0" prefWidth="194.0" style="-fx-background-color: #1F3B9F; -fx-border-style: solid; -fx-border-width: 1.5;" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="239.0">
          <children>
-            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="iP2"  fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../ressources/images/images/avatar-VERT.png" />
                </image>
@@ -44,7 +44,7 @@
          </children></Pane>
       <Pane fx:id="p3" layoutX="1025.0" layoutY="369.0" prefHeight="116.0" prefWidth="194.0" style="-fx-background-color: #1F3B9F; -fx-border-style: solid; -fx-border-width: 1.5;" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="369.0">
          <children>
-            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="iP3" fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../ressources/images/images/AVATAR-ROSE.png" />
                </image>
@@ -54,7 +54,7 @@
          </children></Pane>
       <Pane fx:id="p4" layoutX="1025.0" layoutY="494.0" prefHeight="116.0" prefWidth="194.0" style="-fx-background-color: #1F3B9F; -fx-border-style: solid; -fx-border-width: 1.5;" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="494.0">
          <children>
-            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="iP4" fitHeight="49.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../ressources/images/images/avatar-JAUNE.png" />
                </image>
@@ -86,7 +86,7 @@
             <Font name="Arial" size="17.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="486.0" layoutY="633.0" prefHeight="27.0" prefWidth="251.0" text="Inventaire " textFill="WHITE">
+      <Label alignment="CENTER" layoutX="486.0" layoutY="633.0" prefHeight="27.0" prefWidth="251.0" text="Inventaire " textFill="WHITE" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="485.0">
          <font>
             <Font size="22.0" />
          </font>

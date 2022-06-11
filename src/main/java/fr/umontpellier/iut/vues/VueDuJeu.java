@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -88,6 +89,14 @@ public class VueDuJeu extends AnchorPane{
     private StringProperty sP3;
     private StringProperty sP4;
 
+    @FXML
+    private ImageView iP1;
+    @FXML
+    private ImageView iP2;
+    @FXML
+    private ImageView iP3;
+    @FXML
+    private ImageView iP4;
 
 
     public VueDuJeu(IJeu jeu) {
@@ -124,6 +133,17 @@ public class VueDuJeu extends AnchorPane{
         n3.setText(jeu.getJoueurs().get(2).getNom());
         n4.setText(jeu.getJoueurs().get(3).getNom());
 
+
+        Image i1 = new Image("images/avatar-"+jeu.getJoueurs().get(0).getCouleur().name()+".png");
+        iP1.setImage(i1);
+        Image i2 = new Image("images/avatar-"+jeu.getJoueurs().get(1).getCouleur().name()+".png");
+        iP2.setImage(i2);
+        Image i3 = new Image("images/avatar-"+jeu.getJoueurs().get(2).getCouleur().name()+".png");
+        iP3.setImage(i3);
+        Image i4 = new Image("images/avatar-"+jeu.getJoueurs().get(3).getCouleur().name()+".png");
+        iP4.setImage(i4);
+
+
     }
 
     public void creerBindings() {
@@ -155,56 +175,9 @@ public class VueDuJeu extends AnchorPane{
         setCarteWagonVisible();
         setDestination();
         setScore();
+        setInventaireJoueur();
 
 
-
-
-        jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
-            @Override
-            public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
-                Platform.runLater(()->{
-                    inventaire.getChildren().clear();
-                    for(int i=0;i<t1.cartesWagonProperty().size();i++){
-                        inventaire.getChildren().add(new VueCarteWagon(t1.getCartesWagon().get(i),jeu));
-                    }
-                    for(Node n: inventaire.getChildren()){
-                        VueCarteWagon c = (VueCarteWagon) n;
-                        c.setFitHeight(100);
-                    }
-
-
-
-                });
-            }
-        });
-
-        inventaire.getChildren().addListener(new ListChangeListener<Node>() { //bind pour l'ajout d'une carte
-            @Override
-            public void onChanged(Change<? extends Node> change) {
-                while(change.next()){
-                    if(change.wasAdded()){
-                        VueCarteWagon h = (((VueCarteWagon)change.getList().get(change.getFrom())));
-                        h.fitWidthProperty().bind(d);
-                        if(inventaireWidth.getValue()!=0) {
-                            d.setValue(inventaireWidth.getValue() / inventaire.getChildren().size());
-                        }
-                        else{
-                            d.setValue(inventaire.getPrefWidth()/inventaire.getChildren().size() -2);
-                        }
-                    }
-                }
-            }
-        });
-
-        inventaire.widthProperty().addListener(new ChangeListener<Number>() { //bind pour le resize fenêtre
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                if(!inventaire.getChildren().isEmpty()){
-                    inventaireWidth.setValue(t1);
-                    d.setValue(t1.doubleValue()/inventaire.getChildren().size()-1);
-                }
-            }
-        });
     }
     public Node trouverWagon(ICouleurWagon w){
         for (Node r :pioche.getChildren()){
@@ -355,6 +328,54 @@ public class VueDuJeu extends AnchorPane{
         });
     }
 
+    public void setInventaireJoueur(){
+        jeu.joueurCourantProperty().addListener(new ChangeListener<IJoueur>() {
+            @Override
+            public void changed(ObservableValue<? extends IJoueur> observableValue, IJoueur iJoueur, IJoueur t1) {
+                Platform.runLater(()->{
+                    inventaire.getChildren().clear();
+                    for(int i=0;i<t1.cartesWagonProperty().size();i++){
+                        inventaire.getChildren().add(new VueCarteWagon(t1.getCartesWagon().get(i),jeu));
+                    }
+                    for(Node n: inventaire.getChildren()){
+                        VueCarteWagon c = (VueCarteWagon) n;
+                        c.setFitHeight(100);
+                    }
+
+
+
+                });
+            }
+        });
+
+        inventaire.getChildren().addListener(new ListChangeListener<Node>() { //bind pour l'ajout d'une carte
+            @Override
+            public void onChanged(Change<? extends Node> change) {
+                while(change.next()){
+                    if(change.wasAdded()){
+                        VueCarteWagon h = (((VueCarteWagon)change.getList().get(change.getFrom())));
+                        h.fitWidthProperty().bind(d);
+                        if(inventaireWidth.getValue()!=0) {
+                            d.setValue(inventaireWidth.getValue() / inventaire.getChildren().size());
+                        }
+                        else{
+                            d.setValue(inventaire.getPrefWidth()/inventaire.getChildren().size() -2);
+                        }
+                    }
+                }
+            }
+        });
+
+        inventaire.widthProperty().addListener(new ChangeListener<Number>() { //bind pour le resize fenêtre
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                if(!inventaire.getChildren().isEmpty()){
+                    inventaireWidth.setValue(t1);
+                    d.setValue(t1.doubleValue()/inventaire.getChildren().size()-1);
+                }
+            }
+        });
+    }
 
     @FXML
     public void btaction(){

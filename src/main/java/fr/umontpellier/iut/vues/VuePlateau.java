@@ -13,6 +13,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.SwipeEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -81,9 +82,8 @@ public class VuePlateau extends Pane {
                 @Override
                 public void changed(ObservableValue<? extends Joueur> observableValue, Joueur joueur, Joueur t1) {
                     for(int x = 0; x< lV.size(); x++) {
-                        System.out.println(t1.getCouleur().name());
                         if (lV.get(x).getId().equals(v.getNom())) {
-                            ((Circle) lV.get(x)).setFill(Paint.valueOf("BLACK"));
+                            ((Circle) lV.get(x)).setFill(Paint.valueOf(toColor(t1.getCouleur().name())));
                         }
                     }
 
@@ -99,7 +99,7 @@ public class VuePlateau extends Pane {
                     for(int x=0;x<lR.size();x++){
                         if(lR.get(x).getParent().getId().equals(r.getNom())){
                             for(int z=0;z<lR.get(x).getParent().getChildrenUnmodifiable().size();z++) {
-                                ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setFill(Paint.valueOf("BLACK"));
+                                ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setFill(Paint.valueOf(toColor(t1.getCouleur().name())));
                             }
                         }
                     }
@@ -108,6 +108,26 @@ public class VuePlateau extends Pane {
         }
 
 
+    }
+
+    public String toColor(String couleurJoueur){
+        if(couleurJoueur.equals("JAUNE")){
+            return "YELLOW";
+        }
+        if(couleurJoueur.equals("BLEU")){
+            return "BLUE";
+        }
+        if(couleurJoueur.equals("ROUGE")){
+            return "RED";
+        }
+        if(couleurJoueur.equals("ROSE")){
+            return "PINK";
+        }
+        if(couleurJoueur.equals("VERT")){
+            return "GREEN";
+        }
+
+        return null;
     }
 
 
