@@ -100,7 +100,7 @@ public class VuePlateau extends Pane {
                         if(lR.get(x).getParent().getId().equals(r.getNom())){
                             for(int z=0;z<lR.get(x).getParent().getChildrenUnmodifiable().size();z++) {
                                 ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setFill(Paint.valueOf(toColor(t1.getCouleur().name())));
-                                ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setStrokeWidth(2);
+                                ((Rectangle) lR.get(x).getParent().getChildrenUnmodifiable().get(z)).setStrokeWidth(3);
                             }
                         }
                     }
@@ -113,19 +113,19 @@ public class VuePlateau extends Pane {
 
     public String toColor(String couleurJoueur){
         if(couleurJoueur.equals("JAUNE")){
-            return "YELLOW";
+            return "#FAD02C";
         }
         if(couleurJoueur.equals("BLEU")){
-            return "BLUE";
+            return "#0000FF";
         }
         if(couleurJoueur.equals("ROUGE")){
-            return "RED";
+            return "#FF0000";
         }
         if(couleurJoueur.equals("ROSE")){
-            return "PINK";
+            return "#EDAEC0";
         }
         if(couleurJoueur.equals("VERT")){
-            return "GREEN";
+            return "#00FF00";
         }
 
         return null;
