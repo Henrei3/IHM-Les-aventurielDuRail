@@ -90,7 +90,7 @@
             <Font name="Arial" size="17.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="486.0" layoutY="633.0" prefHeight="27.0" prefWidth="251.0" text="Inventaire " textFill="WHITE" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="485.0">
+      <Label alignment="CENTER" layoutX="486.0" layoutY="633.0" prefHeight="27.0" prefWidth="251.0" text="Inventaire " textFill="WHITE" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="485.0">
          <font>
             <Font size="22.0" />
          </font>
