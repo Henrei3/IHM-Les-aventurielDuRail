@@ -18,7 +18,7 @@
             <Font name="Arial" size="30.0" />
          </font>
       </Label>
-      <Pane fx:id="plateauPane" layoutX="186.0" layoutY="106.0" prefHeight="527.0" prefWidth="813.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="106.0">
+      <Pane fx:id="plateauPane" layoutX="186.0" layoutY="106.0" prefHeight="527.0" prefWidth="813.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="106.0">
          <padding>
             <Insets top="500.0" />
          </padding></Pane>

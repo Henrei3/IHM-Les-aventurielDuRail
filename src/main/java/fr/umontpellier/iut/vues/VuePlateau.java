@@ -151,7 +151,6 @@ public class VuePlateau extends Pane {
                         return t1.doubleValue();
                     }
                 });
-
             }
         });
 

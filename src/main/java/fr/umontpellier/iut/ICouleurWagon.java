@@ -7,3 +7,4 @@ public interface ICouleurWagon {
         return CouleurWagon.values();
     }
 }
+

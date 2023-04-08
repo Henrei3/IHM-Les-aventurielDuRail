@@ -92,6 +92,7 @@ public class VueDuJeu extends AnchorPane{
 
 
     private DoubleProperty d;
+    private DoubleProperty h;
     private DoubleProperty inventaireWidth;
 
     private StringProperty sP1;
@@ -145,7 +146,6 @@ public class VueDuJeu extends AnchorPane{
         n3.setText(jeu.getJoueurs().get(2).getNom());
         n4.setText(jeu.getJoueurs().get(3).getNom());
 
-
         Image i1 = new Image("images/avatar-"+jeu.getJoueurs().get(0).getCouleur().name()+".png");
         iP1.setImage(i1);
         Image i2 = new Image("images/avatar-"+jeu.getJoueurs().get(1).getCouleur().name()+".png");
@@ -154,8 +154,6 @@ public class VueDuJeu extends AnchorPane{
         iP3.setImage(i3);
         Image i4 = new Image("images/avatar-"+jeu.getJoueurs().get(3).getCouleur().name()+".png");
         iP4.setImage(i4);
-
-
     }
 
     public void creerBindings() {
@@ -185,6 +183,7 @@ public class VueDuJeu extends AnchorPane{
         gc4.textProperty().bind(gP4);
 
         d = new SimpleDoubleProperty();
+        h = new SimpleDoubleProperty();
         inventaireWidth = new SimpleDoubleProperty();
 
         Platform.runLater(()->plateau.creerBindings(this));
@@ -241,8 +240,6 @@ public class VueDuJeu extends AnchorPane{
                 Platform.runLater(()->sP3.setValue("Score : " + t1));
             }
         });
-
-
 
         jeu.getJoueurs().get(3).scoreProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -396,11 +393,8 @@ public class VueDuJeu extends AnchorPane{
                     }
                     for(Node n: inventaire.getChildren()){
                         VueCarteWagon c = (VueCarteWagon) n;
-                        c.setFitHeight(100);
+
                     }
-
-
-
                 });
             }
         });
@@ -410,13 +404,17 @@ public class VueDuJeu extends AnchorPane{
             public void onChanged(Change<? extends Node> change) {
                 while(change.next()){
                     if(change.wasAdded()){
-                        VueCarteWagon h = (((VueCarteWagon)change.getList().get(change.getFrom())));
-                        h.fitWidthProperty().bind(d);
-                        if(inventaireWidth.getValue()!=0) {
+                        VueCarteWagon o = (((VueCarteWagon)change.getList().get(change.getFrom())));
+                        o.fitWidthProperty().bind(d);
+                        o.fitHeightProperty().bind(h);
+                        if(inventaireWidth.getValue() != 0) {
                             d.setValue(inventaireWidth.getValue() / inventaire.getChildren().size());
+                            h.setValue((prefWidthProperty().getValue()-widthProperty().getValue()) - 180);
+
                         }
                         else{
                             d.setValue(inventaire.getPrefWidth()/inventaire.getChildren().size() -2);
+
                         }
                     }
                 }
